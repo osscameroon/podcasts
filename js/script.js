@@ -16,7 +16,7 @@ if (supportsAudio) {
     // initialize playlist and controls
     var index = 0,
         playing = false,
-        mediaPath = '',
+        mediaPath = 'https://osscameroon.github.io/podcasts',
         extension = '',
         tracks = podcasts,
         buildPlaylist = $.each(tracks, function(key, value) {
