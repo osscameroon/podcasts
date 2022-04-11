@@ -1,0 +1,8 @@
+.header {
+    align-content: center;
+    display: flex;
+}
+
+.header_logo > img {
+    width: 200px;
+}

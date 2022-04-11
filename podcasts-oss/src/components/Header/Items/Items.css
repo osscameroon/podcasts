@@ -1,0 +1,22 @@
+.item {
+    color: white;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-family: claibrisans-serif sans-serif bold;
+    /*float: left;*/
+    font-size: 1.8em;
+}
+
+.item > li {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.item > li > a {
+    color: white;
+    text-decoration: none;
+}
+
+.items {
+    float: right;
+}
