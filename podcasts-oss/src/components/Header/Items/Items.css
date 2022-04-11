@@ -2,14 +2,17 @@
     color: white;
     text-transform: capitalize;
     text-decoration: none;
-    font-family: claibrisans-serif sans-serif bold;
-    /*float: left;*/
+    font-family: 'Roboto', sans-serif;
+    float: left;
     font-size: 1.8em;
 }
 
 .item > li {
     list-style-type: none;
     text-decoration: none;
+    float: left;
+    padding: 0.5em;
+    margin: 7px 30px 7px 30px;
 }
 
 .item > li > a {

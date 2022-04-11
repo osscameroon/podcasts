@@ -1,8 +1,6 @@
-.header {
-    align-content: center;
-    display: flex;
-}
-
-.header_logo > img {
+.header_logo > a > img {
     width: 200px;
+}
+.header_logo{
+    float: left ;
 }
