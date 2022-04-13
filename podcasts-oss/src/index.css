@@ -1,8 +1,15 @@
+html{
+    height: 100%;
+}
+
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    font-family: Courier sans-serif;
+    -webkit-background: linear-gradient(to bottom, #6c53ff, #363280) no-repeat cover;
+    -moz-background: linear-gradient(to bottom, #6c53ff, #363280) no-repeat cover;
+    -o-background: linear-gradient(to bottom, #6c53ff, #363280) no-repeat cover;
+    background: url("./assets/human_with_phone.png") no-repeat bottom right -30px,
+    url("./assets/earphone.png") no-repeat top right -62.875244140625px,
+    linear-gradient(to bottom, #6c53ff, #363280) no-repeat;
+    background-size: 309px, 299px, cover;
 }
