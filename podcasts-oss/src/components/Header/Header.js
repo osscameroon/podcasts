@@ -1,14 +1,16 @@
 import React from 'react';
 import './Header.css';
-import Items from "./Items/Items";
 import Logo from "./Logo/Logo";
+import SearchForm from "./seacr hForm/searchForm";
 
 class Header extends React.Component {
     render() {
         return (
             <header className="header">
                 <Logo/>
-                <Items/>
+                <SearchForm/>
+                <i className=" fab fa-telegram">
+                </i>
             </header>
         );
     }

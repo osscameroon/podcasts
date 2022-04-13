@@ -1,6 +1,19 @@
 .header_logo > a > img {
     width: 200px;
 }
-.header_logo{
-    float: left ;
+
+.header_logo {
+    float: left;
+}
+
+.fa-telegram {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    left: 40px;
+    text-align: center;
+    font-size: 62px;
+    color: #8cc3e6;
+    opacity: 1;
 }
