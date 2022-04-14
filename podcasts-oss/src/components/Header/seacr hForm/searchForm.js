@@ -4,9 +4,13 @@ import './searchForm.css';
 class SearchForm extends React.Component {
     render() {
         return (
-            <div className="float-start py-5 mx-2">
-                <form className="no_submit">
-                    <input className="no_submit" type="search" placeholder="Search podcasts..."/>
+            <div>
+                <form className="no_submit mx-5">
+                    <input
+                        className="no_submit col-xs-4 px-5 input-sm"
+                        type="search"
+                        placeholder="Search podcasts..."
+                    />
                 </form>
             </div>
         );

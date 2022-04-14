@@ -17,3 +17,13 @@
     color: #8cc3e6;
     opacity: 1;
 }
+
+.sort{
+    position: fixed;
+    font-size: 16px;
+    opacity: 1;
+}
+
+.navbar-toggler{
+    border-color: transparent;
+}
