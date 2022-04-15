@@ -19,7 +19,7 @@ class Header extends React.Component {
                         <div className="collapse navbar-collapse" id="navbarCollapse">
                             <div className="navbar-nav">
                                 <SearchForm/>
-                                <a className="nav-item nav-link active">
+                                <a href="sort.com" className="nav-item nav-link active">
                                     <i className="fa fa-sort-amount-asc sort"/>
                                 </a>
                             </div>
