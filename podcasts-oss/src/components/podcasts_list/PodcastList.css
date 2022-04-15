@@ -1,0 +1,19 @@
+.PodcastList{
+    
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    top: 120px;
+    left: 416px;
+    width: 1088px;
+}
+.loi{
+    margin: 0 auto;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1;
+    padding: 0;
+    width: 80wh;
+    background: #74C5F3;
+}
