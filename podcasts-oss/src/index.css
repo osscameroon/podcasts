@@ -1,4 +1,4 @@
-html{
+html {
     height: 100%;
 }
 
@@ -12,4 +12,21 @@ body {
     url("./assets/earphone.png") no-repeat top right -62.875244140625px,
     linear-gradient(to bottom, #6c53ff, #363280) no-repeat;
     background-size: 309px, 299px, cover;
+}
+
+@media (min-width: 996px) {
+
+    .sort {
+        margin-left: 120px;
+    }
+}
+
+@media (max-width: 983px) {
+    .sort {
+        margin-top: 12px;
+    }
+
+    input {
+        width: 100%;
+    }
 }
