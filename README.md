@@ -10,12 +10,16 @@ Running steps
 - Clonning on your local machine
   - `git clone https://github.com/<Your_username>/podcasts`
 - On your local machine, follow the steps below
-  - `$ cd podcast`
-  - `npm install`
-  - `npm run start`
-  - Optional:
-    - `npm audit`
-    - `npm audit fix --force`
+``` 
+cd podcast
+npm install
+npm run start
+```
+Optional:
+```
+npm audit
+npm audit fix --force
+```
  
  After following the steps above, the project will be running locally on the address: [http://localhost:3000](http://localhost:3000)
  
