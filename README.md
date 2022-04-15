@@ -3,23 +3,23 @@
 
 This podcast build preview can be [here](https://go-records.me/podcasts), deployment made using [Github pages](https://pages.github.com/)
 
-Initiative of [OssCameroon](https://osscameroon.com/)
+Initiative of [OssCameroon](https://osscameroon.com/) under the [MIT license](https://opensource.org/licenses/MIT)
 
 Running steps
 - Fork the repo on your personal account
 - Clonning on your local machine
   - `git clone https://github.com/<Your_username>/podcasts`
 - On your local machine, follow the steps below
-``` 
-cd podcast
-npm install
-npm run start
-```
-Optional:
-```
-npm audit
-npm audit fix --force
-```
+  ``` 
+  cd podcast
+  npm install
+  npm run start
+  ```
+- Optional:
+  ```
+  npm audit
+  npm audit fix --force
+  ```
  
  After following the steps above, the project will be running locally on the address: [http://localhost:3000](http://localhost:3000)
  
