@@ -9,15 +9,15 @@ class PodcastList extends React.Component {
                 {track_oss.map((track, i)=>(
                     <li className="trackContainer">
                         <div className="track_play">
-                            <i className="fas fa-play"></i>
+                            <i className="fas fa-microphone fa-3x"></i>
                         </div>
                         <div className="track_playlist">
-                            <span className="tracktitle">{track.title}</span>
+                            <span className="tracktitle">{track.title}</span><br/>
                             <span className="trackname">{track.podName}</span>
                         </div>
-                        <div className="podcastlist_btn_group">
-                            <button className="fav_song podcastlist_btn">
-                                <i className="far fa-heart fa-lg"></i>
+                        <div className="download_pod">
+                            <button className="podcastlist_but" type="download">
+                                <i className="fas fa-download" aria-hidden="true"></i>
                             </button>
                         </div>
                     </li>
