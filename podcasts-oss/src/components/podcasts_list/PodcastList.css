@@ -1,11 +1,14 @@
+*::after,::before{
+    box-sizing: border-box;
+    display: block;
+}
 .PodcastList{
-    
-    flex: 1 1;
-    display: flex;
+    display: block;
     flex-direction: column;
     top: 120px;
-    left: 416px;
-    width: 1088px;
+    flex-grow: 1;
+    width: 10%;
+    padding-left: 17%;  
 }
 .loi{
     margin: 0 auto;
@@ -13,7 +16,65 @@
     display: flex;
     flex-direction: column;
     flex: 1 1;
+    left:90px;
+    width: 80vh;
+}
+.loi li{
+    margin: 2px;
+    font-weight: 400;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #B6DEF5;
+    height: 90px;
+    width: 175%;
+}
+.track_play{
+    top: 193px;
+    width: 50px;
+    height: 90px;
+    color: #082333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+i.fa-microphone{
+    width: 65px;
+    height: 90px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding-left: 30px;
+}
+.download_pod{
+    transform: translateX(455px);
+}
+.podcastlist_but{
+    border: none;
+    background: none;
     padding: 0;
-    width: 80wh;
-    background: #74C5F3;
+    margin: 0;  
+}
+i.fa-download{
+    height: 70px; 
+}
+.loi li:hover{
+    background-color: #74C5F3;
+}
+.track_playlist{
+    text-align:center;
+    padding-left: 8%;
+    flex-direction: row;
+    list-style: none;
+    width: fit-content;  
+}
+span.tracktitle{
+    font-weight: bold;
+    color: #082333;
+    font-size: 20px;   
+}
+span.trackname{
+    color: #707070;
+    font-size: 10px;
+    line-height: 9%;   
 }
