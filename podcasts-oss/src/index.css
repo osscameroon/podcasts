@@ -30,3 +30,9 @@ body {
         width: 100%;
     }
 }
+@font-face {
+    font-family: "GoogleSans";
+    src: local("GoogleSans"),
+     url("./fonts/GoogleSans-Medium-v1.27.ttf") format("truetype");
+     font-weight:500;
+    }
