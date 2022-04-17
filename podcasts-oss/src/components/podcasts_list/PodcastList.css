@@ -1,19 +1,49 @@
-.PodcastList{
-    
-    flex: 1 1;
-    display: flex;
-    flex-direction: column;
-    top: 120px;
-    left: 416px;
-    width: 1088px;
-}
-.loi{
+ul {
     margin: 0 auto;
     list-style: none;
-    display: flex;
     flex-direction: column;
-    flex: 1 1;
+}
+
+li{
+    background-color: #B6DEF5;
+    margin: 10px 0 10px 0;
+}
+li:active{
+    background-color: #74C5F3;
+}
+li:hover{
+    background-color: #74C5F3;
+}
+.track_play {
+    top: 193px;
+    height: 90px;
+    color: #082333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.podcastlist_but {
+    border: none;
+    background: none;
     padding: 0;
-    width: 80wh;
-    background: #74C5F3;
+    margin: 0;
+}
+
+.track_playlist {
+    text-align: center;
+    flex-direction: row;
+    list-style: none;
+}
+
+span.track_title {
+    font-weight: bold;
+    color: #082333;
+    font-size: 20px;
+}
+
+span.track_name {
+    color: #707070;
+    font-size: 10px;
+    line-height: 9%;
 }

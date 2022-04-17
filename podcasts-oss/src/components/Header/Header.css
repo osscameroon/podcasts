@@ -18,12 +18,19 @@
     opacity: 1;
 }
 
-.sort{
+.sort {
     position: fixed;
     font-size: 16px;
     opacity: 1;
 }
 
-.navbar-toggler{
+.navbar-toggler {
     border-color: transparent;
 }
+
+/*.header {*/
+/*    position: -webkit-sticky;*/
+/*    position: sticky;*/
+/*    top: 0;*/
+/*    z-index: 1020;*/
+/*}*/

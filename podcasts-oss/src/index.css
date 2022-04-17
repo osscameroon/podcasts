@@ -9,9 +9,10 @@ body {
     -moz-background: linear-gradient(to bottom, #6c53ff, #363280) no-repeat cover;
     -o-background: linear-gradient(to bottom, #6c53ff, #363280) no-repeat cover;
     background: url("./assets/human_with_phone.png") no-repeat bottom right -30px,
-    url("./assets/earphone.png") no-repeat top right -62.875244140625px,
+    url("./assets/earphone.png") no-repeat top right -62.875244140625px fixed,
     linear-gradient(to bottom, #6c53ff, #363280) no-repeat;
     background-size: 309px, 299px, cover;
+    background-attachment: fixed;
 }
 
 @media (min-width: 996px) {
@@ -19,14 +20,24 @@ body {
     .sort {
         margin-left: 120px;
     }
+    input {
+    margin-left: 5630px;
+    }
 }
 
 @media (max-width: 983px) {
     .sort {
         margin-top: 12px;
+        position: sticky;
     }
 
     input {
         width: 100%;
     }
 }
+@font-face {
+    font-family: "GoogleSans";
+    src: local("GoogleSans"),
+     url("./fonts/GoogleSans-Medium-v1.27.ttf") format("truetype");
+     font-weight:500;
+    }
