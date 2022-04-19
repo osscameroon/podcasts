@@ -9,20 +9,20 @@ class PodcastList extends React.Component {
             <ul className="">
                 <div className="container">
                     <div className="row">
-                        <div className="col-xs-12 col-sm-6 col-md-6 mx-auto">
+                        <div className="col-xs-12 col-sm-8 col-md-8 mx-auto">
                             {track_oss.map((track, i) => (
                                     <li className="trackContainer">
-                                        <div className="track_play">
+                                        <div className="float-start">
                                             <i className="fa fa-microphone-lines fa-3x"/>
                                         </div>
-                                        <div className="track_playlist">
-                                            <span className="track_title">{track.title}</span><br/>
-                                            <span className="track_name">{track.podName}</span>
-                                        </div>
-                                        <div className="download_pod">
-                                            <button className="podcastlist_but" type="download">
-                                                <i className="fa fa-down-to-bracket" aria-hidden="true"/>
-                                            </button>
+                                        <div className="mx-auto align-center">
+                                            <span className="track-title">{track.title}</span><br/>
+                                            <span className="track-podcast-name">{track.podName}</span>
+                                            <div className="float-end">
+                                                <button className="" type="download">
+                                                    <i className="fa fa-down-to-bracket" aria-hidden="true"/>
+                                                </button>
+                                            </div>
                                         </div>
                                     </li>
                                 ),

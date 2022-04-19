@@ -1,9 +1,3 @@
-ul {
-    margin: 0 auto;
-    list-style: none;
-    flex-direction: column;
-}
-
 li{
     background-color: #B6DEF5;
     margin: 10px 0 10px 0;
@@ -14,36 +8,16 @@ li:active{
 li:hover{
     background-color: #74C5F3;
 }
-.track_play {
-    top: 193px;
-    height: 90px;
-    color: #082333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+li{
+    /*list-style-type: none;*/
 }
 
-.podcastlist_but {
-    border: none;
-    background: none;
-    padding: 0;
-    margin: 0;
-}
-
-.track_playlist {
-    text-align: center;
-    flex-direction: row;
-    list-style: none;
-}
-
-span.track_title {
+li.track-title{
+    font-size: 1.5em;
     font-weight: bold;
-    color: #082333;
-    font-size: 20px;
+    padding: 20px 5px 20px 5px;
 }
 
-span.track_name {
-    color: #707070;
-    font-size: 10px;
-    line-height: 9%;
+.trackContainer{
+    height: 200px;
 }
