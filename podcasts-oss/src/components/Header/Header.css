@@ -18,3 +18,13 @@
     top: 0;
     z-index: 1020;
 }
+
+.header-on-scroll {
+    background: linear-gradient(
+            to bottom,
+            #6c53ff,
+            #5b4bb6,
+            #363280
+
+    ) no-repeat;
+}

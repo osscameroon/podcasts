@@ -30,7 +30,7 @@ body {
     }
 }
 
-@media (max-width: 983px) {
+@media (min-width: 100px) and (max-width: 983px){
     body {
         background-size: 250px, 200px, cover;
     }
@@ -41,6 +41,34 @@ body {
     }
 
     input {
+        width: 100%;
+    }
+    .track-title{
+        font-size: 20px !important;
+    }
+
+    .trackContainer.active{
+        border-left: #0C344B solid 5px;
+        background-color: #74C5F3;
+    }
+
+    .trackContainer>* {
+        padding: 25px;
+    }
+
+    .fa-down-to-bracket{
+    }
+
+    .track-title{
+        font-family: GoogleSans, sans-serif bold;
+    }
+
+    .track-podcast-name{
+
+    }
+
+    .header{
+        position: sticky;
         width: 100%;
     }
 }

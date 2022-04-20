@@ -11,17 +11,17 @@ class PodcastList extends React.Component {
                     <div className="row">
                         <div className="col-xs-12 col-sm-8 col-md-8 mx-auto">
                             {track_oss.map((track, i) => (
-                                    <li className="trackContainer">
+                                    <li className={"trackContainer" + " " + track.active}>
                                         <div className="float-start">
-                                            <i className="fa fa-microphone-lines fa-3x"/>
+                                            <i className="fa fa-microphone-lines fa-5x"/>
                                         </div>
                                         <div className="mx-auto align-center">
-                                            <span className="track-title">{track.title}</span><br/>
-                                            <span className="track-podcast-name">{track.podName}</span>
+                                            <span className="track-title"> {track.id}- {track.title}</span><br/>
+                                            <span className="track-podcast-name text-black-50">{track.podName}</span>
                                             <div className="float-end">
-                                                <button className="" type="download">
-                                                    <i className="fa fa-down-to-bracket" aria-hidden="true"/>
-                                                </button>
+                                                <a className="border-light bg-transparent text-dark" type="download">
+                                                    <i className="fa-solid fa-down-to-bracket" aria-hidden="true"/>
+                                                </a>
                                             </div>
                                         </div>
                                     </li>
@@ -29,7 +29,6 @@ class PodcastList extends React.Component {
                             )
                             };
                         </div>
-
                     </div>
                 </div>
             </ul>

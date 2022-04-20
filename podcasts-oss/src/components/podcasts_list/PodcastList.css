@@ -9,15 +9,42 @@ li:hover{
     background-color: #74C5F3;
 }
 li{
-    /*list-style-type: none;*/
+    list-style-type: none;
 }
 
-li.track-title{
+.track-title{
     font-size: 1.5em;
     font-weight: bold;
     padding: 20px 5px 20px 5px;
+    width: fit-content;
 }
 
 .trackContainer{
-    height: 200px;
+    height: 164px;
+}
+
+.trackContainer.active{
+    border-left: #0C344B solid 5px;
+    background-color: #74C5F3;
+}
+
+.trackContainer>* {
+    padding: 25px;
+}
+
+.fa-down-to-bracket{
+    font-size: 27px;
+    width: 27px;
+    top: 0;
+    column-count: 1;
+    column-gap: 20px;
+}
+
+.track-title{
+    font-size: 35px;
+    font-family: GoogleSans, sans-serif bold;
+}
+
+.track-podcast-name{
+
 }
