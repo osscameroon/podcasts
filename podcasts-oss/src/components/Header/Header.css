@@ -6,24 +6,25 @@
     float: left;
 }
 
-.fa-telegram {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 40px;
-    left: 40px;
-    text-align: center;
-    font-size: 62px;
-    color: #8cc3e6;
-    opacity: 1;
-}
-
-.sort{
+.sort {
     position: fixed;
     font-size: 16px;
     opacity: 1;
 }
 
-.navbar-toggler{
-    border-color: transparent;
+.header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
+
+.header-on-scroll {
+    background: linear-gradient(
+            to bottom,
+            #6c53ff,
+            #5b4bb6,
+            #363280
+
+    ) no-repeat;
 }
