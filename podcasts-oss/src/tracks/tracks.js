@@ -9,14 +9,14 @@ export const track_oss = [
     {
         id: '02',
         active: '',
-        title: 'OSS Talk Flutter Vs ReactNative',
+        title: 'Andrew',
         podName: 'The OSS Community - 02/04/2022',
         fileUrl: '',
     },
     {
         id: '03',
         active: '',
-        title: 'OSS Talk Flutter Vs ReactNative',
+        title: 'ONS Talk Flutter Vs ReactNative',
         podName: 'The OSS Community - 02/04/2022',
         fileUrl: '',
     },
