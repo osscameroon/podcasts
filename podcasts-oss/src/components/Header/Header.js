@@ -2,7 +2,7 @@ import React from 'react';
 import './Header.css';
 import Logo from "./Logo/Logo";
 import $ from 'jquery';
-import SearchForm from "./seacr hForm/searchForm";
+import SearchForm from "./seacrhForm/searchForm";
 
 
 class Header extends React.Component {
