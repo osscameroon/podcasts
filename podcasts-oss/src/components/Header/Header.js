@@ -8,6 +8,7 @@ import SearchForm from "./seacr hForm/searchForm";
 class Header extends React.Component {
     render() {
         return (
+            <div>
             <div className="header">
                 <nav className="navbar navbar-expand-lg navbar-light">
                     <div className="container-fluid">
@@ -20,15 +21,21 @@ class Header extends React.Component {
                         </button>
                         <div className="collapse navbar-collapse" id="navbarCollapse">
                             <div className="navbar-nav">
-                                <SearchForm/>
+                           
                                 <a href="" className="nav-item nav-link active">
                                     <i className="fa fa-sort-amount-asc sort"/>
                                 </a>
+                                
                             </div>
+                            
                         </div>
+                        
                     </div>
+                    
                 </nav>
             </div>
+            <SearchForm/>    
+        </div>
         );
     }
 }
