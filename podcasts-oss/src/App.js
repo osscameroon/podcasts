@@ -7,13 +7,13 @@ import './fonts/GoogleSans-Medium-v1.27.ttf';
 import './fonts/GoogleSans-Regular-v1.27.ttf';
 import Button from './components/Button/Button';
 // import $ from 'jquery';
-//import PodcastList from './components/podcasts_list/PodcastList';
+import PodcastList from './components/podcasts_list/PodcastList';
 
 function App() {
     return (
         <div className="App">
             <Header/>
-            {/* <PodcastList/> */}
+            <PodcastList/>
             <Button/>
         </div>
 
