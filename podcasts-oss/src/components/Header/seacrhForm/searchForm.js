@@ -26,7 +26,7 @@ function SearchForm(){
         };
         return (
             <div>
-                 <form className="no_submit  col-sm-7 col-ml-3  mx-auto">
+                 <form className="no_submit  mx-5">
                     <input
                         className="no_submit col-xs-4 px-5 input-sm"
                         type="search"
@@ -35,7 +35,7 @@ function SearchForm(){
                         onChange={filter}
                     />
                 </form> 
-                <ul className="">
+                {/* <ul className="">
                 <div className="container">
                     <div className="row">
                         <div className="col-xs-12 col-sm-8 col-md-8 mx-auto">
@@ -64,7 +64,8 @@ function SearchForm(){
                     </div>
                 </div>
                 
-            </ul>
+            </ul> */}
+            {/* <h1>No results</h1> */}
             </div>
                 
         );
