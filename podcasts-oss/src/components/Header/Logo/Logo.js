@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import podcast_logo from '../../../assets/podcast_logo.png';
 import './Logo.css';
-//import '../../podcasts_list/PodcastList.css'
 
 class Logo extends Component {
     render() {
@@ -10,7 +9,6 @@ class Logo extends Component {
                 <a href="/">
                     <img src={podcast_logo} alt="Podcasts" className="header_logo_image"/>
                 </a>
-                
             </div>
         );
     }
