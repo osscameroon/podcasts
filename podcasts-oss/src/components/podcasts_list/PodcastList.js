@@ -3,14 +3,16 @@ import './PodcastList.css';
 import {track_oss} from "../../tracks/tracks";
 import 'font-awesome/css/font-awesome.min.css';
 
+
 class PodcastList extends React.Component {
     render() {
+        const foundPodcast = track_oss;
         return (
             <ul className="">
                 <div className="container">
                     <div className="row">
                         <div className="col-xs-12 col-sm-8 col-md-8 mx-auto">
-                            {track_oss.map((track, i) => (
+                            {foundPodcast.map((track, i) => (
                                     <li className={"trackContainer" + " " + track.active}>
                                         <div className="float-start">
                                             <i className="fa fa-microphone-lines fa-5x"/>
