@@ -28,11 +28,11 @@ export const Header = () => {
     };
 
 
-    const [navSize, setnavSize] = useState("10rem");
-    const [navColor, setnavColor] = useState("transparent");
+    const [navSize, satnavSize] = useState("10rem");
+    const [navColor, satnavColor] = useState("transparent");
     const listenScrollEvent = () => {
-        window.scrollY > 10 ? setnavColor("#0023ff") : setnavColor("transparent");
-        window.scrollY > 10 ? setnavSize("10rem") : setnavSize("10rem");
+        window.scrollY > 10 ? satnavColor("#0023ff") : satnavColor("transparent");
+        window.scrollY > 10 ? satnavSize("10rem") : satnavSize("10rem");
     };
     useEffect(() => {
         window.addEventListener("scroll", listenScrollEvent);
