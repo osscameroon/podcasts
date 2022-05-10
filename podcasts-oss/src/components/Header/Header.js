@@ -1,17 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Header.css';
-import Logo from "./Logo/Logo";
-import $ from 'jquery';
-import SearchForm from "./searchForm/searchForm";
+import '../Header/searchForm/searchForm.css';
+import podcast_logo from '../../assets/podcast_logo.png';
+import { track_oss } from '../../tracks/tracks';
+import { PodcastList } from '../podcasts_list/PodcastList';
 
 
-class Header extends React.Component {
-    render() {
-        return (
+export const Header = () => {
+
+    const [title, setTitle] = useState('');
+
+    //search result
+    const [podCastItems, setPodcastItems] = useState(track_oss)
+
+    const filter = (e) => {
+        const keyword = e.target.value;
+
+        if (keyword !==''){
+            const results = track_oss.filter((podcast) =>{
+                return podcast.title.toLowerCase().includes(keyword.toLowerCase());
+            });
+            setPodcastItems(results);
+        } else {
+            setPodcastItems(track_oss);
+        }
+        setTitle(keyword);
+    };
+
+    return (
+        <>
             <div className="header">
                 <nav className="navbar navbar-expand-lg navbar-light">
                     <div className="container-fluid">
-                        <Logo/>
+                        <div className="header_logo">
+                            <a href="/">
+                                <img src={podcast_logo} alt="Podcasts" className="header_logo_image"/>
+                            </a>
+                        </div>
                         <button type="button" className="navbar-toggler" data-bs-toggle="collapse"
                                 data-bs-target="#navbarCollapse">
                             <span>
@@ -20,7 +45,17 @@ class Header extends React.Component {
                         </button>
                         <div className="collapse navbar-collapse" id="navbarCollapse">
                             <div className="navbar-nav">
-                                <SearchForm/>
+                                <div>
+                                     <form className="no_submit mx-5">
+                                        <input
+                                            className="no_submit col-xs-4 px-5 input-sm"
+                                            type="search"
+                                            value={title}
+                                            placeholder="Search podcasts..."
+                                            onChange={filter}
+                                        />
+                                    </form>
+                                </div>
                                 <a href="" className="nav-item nav-link active">
                                     <i className="fa fa-sort-amount-asc sort"/>
                                 </a>
@@ -29,19 +64,7 @@ class Header extends React.Component {
                     </div>
                 </nav>
             </div>
-        );
-    }
-}
-
-
-$(function() {
-    $(window).on("scroll", function() {
-        if($(window).scrollTop() > 50) {
-            $(".header").addClass("header-on-scroll");
-        } else {
-            //remove the background property so it comes transparent again (defined in your css)
-            $(".header").removeClass("header-on-scroll");
-        }
-    });
-});
-export default Header;
+            <PodcastList list={podCastItems}/>
+        </>
+    );
+};

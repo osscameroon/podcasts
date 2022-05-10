@@ -16,21 +16,20 @@ export const track_oss = [
     {
         id: '03',
         active: '',
-        title: 'OSS Talk Flutter Vs ReactNative',
+        title: 'COMMON GUYSSSS',
         podName: 'The OSS Community - 02/04/2022',
         fileUrl: '',
     },
     {
         id: '04',
         active: '',
-        title: 'OSS Talk Flutter Vs ReactNative',
+        title: 'NFAVOORRRR',
         podName: 'The OSS Community - 02/04/2022',
         fileUrl: '',
     },
     {
-
         id: '05',
-        title: 'OSS Talk Flutter Vs ReactNative',
+        title: 'Something over there ???',
         podName: 'The OSS Community - 02/04/2022',
         fileUrl: '',
     }
