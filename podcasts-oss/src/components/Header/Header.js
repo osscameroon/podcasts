@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect }from 'react';
 import './Header.css';
 import '../Header/searchForm/searchForm.css';
 import podcast_logo from '../../assets/podcast_logo.png';
@@ -27,9 +27,27 @@ export const Header = () => {
         setTitle(keyword);
     };
 
+
+    const [navSize, satnavSize] = useState("10rem");
+    const [navColor, satnavColor] = useState("transparent");
+    const listenScrollEvent = () => {
+        window.scrollY > 10 ? satnavColor("#7760f8") : satnavColor("transparent");
+        window.scrollY > 10 ? satnavSize("10rem") : satnavSize("10rem");
+    };
+    useEffect(() => {
+        window.addEventListener("scroll", listenScrollEvent);
+        return () => {
+            window.removeEventListener("scroll", listenScrollEvent);
+        };
+    }, []);
+
     return (
         <>
-            <div className="header">
+            <div className="header" style={{
+                backgroundColor: navColor,
+                height: navSize,
+                transition: "all 1s"
+            }}>
                 <nav className="navbar navbar-expand-lg navbar-light">
                     <div className="container-fluid">
                         <div className="header_logo">
@@ -56,7 +74,7 @@ export const Header = () => {
                                         />
                                     </form>
                                 </div>
-                                <a href="" className="nav-item nav-link active">
+                                <a href="/" className="nav-item nav-link active">
                                     <i className="fa fa-sort-amount-asc sort"/>
                                 </a>
                             </div>
