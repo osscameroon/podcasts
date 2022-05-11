@@ -6,6 +6,7 @@ import './fonts/GoogleSans-Bold-v1.27.ttf';
 import './fonts/GoogleSans-Medium-v1.27.ttf';
 import './fonts/GoogleSans-Regular-v1.27.ttf';
 import { Button } from './components/Button/Button';
+import Player from "./components/Player/Player";
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <div className="App">
             <Header/>
             <Button/>
+            <Player/>
         </div>
 
     );

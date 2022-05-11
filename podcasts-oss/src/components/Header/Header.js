@@ -31,7 +31,7 @@ export const Header = () => {
     const [navSize, satnavSize] = useState("10rem");
     const [navColor, satnavColor] = useState("transparent");
     const listenScrollEvent = () => {
-        window.scrollY > 10 ? satnavColor("#7760f8") : satnavColor("transparent");
+        window.scrollY > 10 ? satnavColor("rgb(119,96,248)") : satnavColor("transparent");
         window.scrollY > 10 ? satnavSize("10rem") : satnavSize("10rem");
     };
     useEffect(() => {
