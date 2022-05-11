@@ -4,9 +4,13 @@ import '../Header/searchForm/searchForm.css';
 import podcast_logo from '../../assets/podcast_logo.png';
 import { track_oss } from '../../tracks/tracks';
 import { PodcastList } from '../podcasts_list/PodcastList';
+import { Button } from '../Button/Button';
+
 
 
 export const Header = () => {
+
+    
 
     const [title, setTitle] = useState('');
 
@@ -74,9 +78,11 @@ export const Header = () => {
                                         />
                                     </form>
                                 </div>
-                                <a href="/" className="nav-item nav-link active">
+                                <Button/>
+                                {/* <a href="/" className="nav-item nav-link active">
+                                
                                     <i className="fa fa-sort-amount-asc sort"/>
-                                </a>
+                                </a>  */}
                             </div>
                         </div>
                     </div>
