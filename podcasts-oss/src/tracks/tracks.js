@@ -9,27 +9,33 @@ export const track_oss = [
     {
         id: '02',
         active: '',
-        title: 'OSS Talk Flutter Vs ReactNative',
+        title: 'Cross-Platform Development',
         podName: 'The OSS Community - 02/04/2022',
         fileUrl: '',
     },
     {
         id: '03',
         active: '',
-        title: 'COMMON GUYSSSS',
+        title: 'Recent OSS Developement',
         podName: 'The OSS Community - 02/04/2022',
         fileUrl: '',
     },
     {
         id: '04',
         active: '',
-        title: 'NFAVOORRRR',
+        title: 'FronEnd Development Stack',
         podName: 'The OSS Community - 02/04/2022',
         fileUrl: '',
     },
     {
         id: '05',
-        title: 'Something over there ???',
+        title: 'Back-End Development Stack',
+        podName: 'The OSS Community - 02/04/2022',
+        fileUrl: '',
+    },
+    {
+        id: '06',
+        title: 'Full-Stack Development Guides',
         podName: 'The OSS Community - 02/04/2022',
         fileUrl: '',
     }
