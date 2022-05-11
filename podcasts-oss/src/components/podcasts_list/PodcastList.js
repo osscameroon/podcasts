@@ -2,7 +2,7 @@ import React from "react";
 import './PodcastList.css'
 
 const PodCastComponent = ({track}) => (
-    <li className={"trackContainer" + " " + track.active}>
+    <li className={"trackContainer " + track.active}>
             <div className="float-start">
                 <i className="fa fa-microphone-lines fa-5x"/>
             </div>
@@ -10,7 +10,7 @@ const PodCastComponent = ({track}) => (
                 <span className="track-title"> {track.id}- {track.title}</span><br/>
                 <span className="track-podcast-name text-black-50">{track.podName}</span>
                 <div className="float-end">
-                    <a className="border-light bg-transparent text-dark" type="download">
+                    <a href="/" className="border-light bg-transparent text-dark" type="download">
                         <i className="fa-solid fa-down-to-bracket" aria-hidden="true"/>
                     </a>
                 </div>
@@ -23,7 +23,7 @@ export const PodcastList = ({list}) => (
         <div className="container">
             <div className="row">
                 <div className="col-xs-12 col-sm-8 col-md-8 mx-auto">
-                    {list.map((track, i) => <PodCastComponent track={track}/> )};
+                    {list.map((track) => <PodCastComponent track={track}/> )};
                 </div>
             </div>
         </div>
