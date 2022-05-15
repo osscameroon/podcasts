@@ -39,6 +39,8 @@ export default function Player() {
         }
     }
 
+    const volumeVal = audioPlayer.current.volume === 1;
+
     const playPause = () => {
         if (!isActive || audioPlayer.current.currentTime === 0){
             setActive(!isActive);
@@ -107,7 +109,7 @@ export default function Player() {
                     </span>
                     <span className={"flex-fill text-white mb-0 last-group"}>
                         <button className={"mx-3 my-4 border-none"}>
-                            <i className="fa fa-volume-up fa-3x text-white"/>
+                            <i className={ volumeVal ? "fa fa-volume-up fa-3x text-white": "fa fa-volume-down fa-3x text-white"}/>
                         </button>
                         <a href="https://raw.githubusercontent.com/muhammederdem/mini-player/master/mp3/6.mp3"
                            className={"mx-3 my-4 border-none"}>
