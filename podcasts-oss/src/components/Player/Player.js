@@ -112,7 +112,7 @@ export default function Player() {
                             <i className={ volumeVal ? "fa fa-volume-up fa-3x text-white":
                                 "fa fa-volume-mute fa-3x text-white"}/>
                         </button>
-                        <a href="https://raw.githubusercontent.com/muhammederdem/mini-player/master/mp3/6.mp3"
+                        <a href={track_oss[index].fileUrl} download={track_oss[index].title}
                            className={"mx-3 my-4 border-none"}>
                             <i className="fa fa-down-to-bracket fa-3x text-white"/>
                         </a>
