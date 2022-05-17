@@ -21,8 +21,11 @@ export default function Player() {
 
     const toPrevTrack = () => {
         if (trackIndex < (track_oss.length - 1)) {
-            audioPlayer.current.play();
             setTrackIndex(trackIndex - 1);
+            audioPlayer.current.play();
+            if (trackIndex <= 0) {
+                setTrackIndex(0);
+            }
         } else {
             setTrackIndex(0);
             audioPlayer.current.play();
@@ -151,7 +154,7 @@ export default function Player() {
                      mb-0 play-commands justify-content-center">
                         <button className="round-button-none
                          gradient-border-none px-2 mx-2 my-4"
-                                onClick={toPrevTrack}>
+                                onClick={toPrevTrack} onDoubleClick={null}>
                             <i className="fas fa-step-backward fa-2x"/>
                         </button>
                         <button onClick={playPause} onDoubleClick={stopOrPlay}
@@ -162,7 +165,7 @@ export default function Player() {
                         </button>
                         <button className="round-button-none
                         gradient-border-none px-2 mx-2 my-4"
-                                onClick={toNextTrack}>
+                                onClick={toNextTrack} onDoubleClick={null}>
                             <i className="fas fa-step-forward fa-2x"/>
                         </button>
                     </span>
