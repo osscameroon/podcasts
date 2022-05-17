@@ -49,7 +49,7 @@ export default function Player() {
         if (volume > 0) {
             setVolume(volume - 0.1);
             audioPlayer.current.volume = volume - 0.1;
-            if ((volume - 0.1)===0){
+            if ((volume - 0.1) === 0) {
                 setVolume(0);
             }
         }
@@ -168,11 +168,9 @@ export default function Player() {
                     </span>
                     <span className={"flex-fill text-white mb-0 last-group"}>
                         <button className={"mx-3 my-4 border-none"}>
-{/*                            <i className={volumeVal ? "fa fa-volume-up fa-3x text-white" :
-                                "fa fa-volume-mute fa-3x text-white"}/>*/}
                             <div className="dropup">
                                 <button className="dropbtn">
-                                    <i className={"fa fa-volume-up fa-3x text-white"}/>
+                                    <i className={"fa fa-volume-up fa-2x text-white"}/>
                                 </button>
                                 <div className="dropup-content mb-4">
                                     <span className={"volume-tip float start"}>{Math.round(volume * 100)}</span>
@@ -194,7 +192,28 @@ export default function Player() {
                             <i className="fa fa-down-to-bracket fa-3x text-white"/>
                         </a>
                         <button className={"mx-3 my-4 border-none"}>
-                            <i className="fa-solid fa-share-from-square fa-3x text-white"/>
+                            <div className="dropup">
+                                <button className="dropbtn">
+                                    <i className="fa-solid fa-share-from-square fa-2x text-white"/>
+                                </button>
+                                <div className="dropup-content share-items mb-4">
+                                    <a href={"/"} className={"share"} onClick={volumeUp}>
+                                        <i className={"fab fa-facebook fa-2x"}/>
+                                    </a>
+                                    <a href={"/"} className={"share"} onClick={volumeDown}>
+                                        <i className={"fab fa-twitter fa-2x"}/>
+                                    </a>
+                                    <a href={"/"} className={"share"} onClick={volumeMute}>
+                                        <i className={"fab fa-linkedin fa-2x"}/>
+                                    </a>
+                                    <a href={"/"} className={"share"} onClick={volumeMute}>
+                                        <i className={"fab fa-whatsapp fa-2x"}/>
+                                    </a>
+                                    <a href={"/"} className={"share"} onClick={volumeMute}>
+                                        <i className={"fab fa-github fa-2x"}/>
+                                    </a>
+                                </div>
+                            </div>
                         </button>
                     </span>
                 </div>

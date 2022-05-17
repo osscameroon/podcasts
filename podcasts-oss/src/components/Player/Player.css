@@ -169,3 +169,23 @@ input[type="range"]::-webkit-slider-thumb {
     font-weight: bold;
     z-index: 10;
 }
+
+.share{
+    color: white;
+    background-color: #0C344B;
+    width: 100%;
+    display: block;
+    border-radius: 20px;
+    height: 40px;
+}
+
+.share:hover{
+    background-color: white;
+    color: #0C344B;
+}
+
+.share-items{
+    padding: 10px;
+    border-bottom: 1px solid #0C344B;
+    height: auto;
+}
