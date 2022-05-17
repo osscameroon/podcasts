@@ -38,7 +38,8 @@ export default function Player() {
     }
 
     const onPlaying = () => {
-        if (audioPlayer.current.currentTime === audioPlayer.current.duration) {
+        if (audioPlayer.current.currentTime ===
+            audioPlayer.current.duration) {
             audioPlayer.current.currentTime = 0;
             seekValue = 0
             toNextTrack();
@@ -58,7 +59,7 @@ export default function Player() {
 
     const volumeVal = audioPlayer.current.volume === 1;
 
-    const isNew = isNaN(audioPlayer);
+    const isNew = isNaN(useState(audioPlayer));
 
     const playPause = () => {
         if (!isActive || audioPlayer.current.currentTime === 0) {
@@ -89,10 +90,11 @@ export default function Player() {
                                 audioPlayer.current.duration * (+e.target.value / 100);
                             setSeekValue(e.target.value);
                         }}
-                        className={"w-75"} align={"center"}
+                        className={"w-75 audio-range"} align={"center"}
                     />
                     <p className={"text-white mx-5 h4"}>
-                        {isNew ? "00: 00: 00" :
+                        {isNew ? "" +
+                            audioPlayer.current.duration :
                             new Date(audioPlayer.current.duration * 1000).toISOString().slice(11, 19)}
                     </p>
                 </div>
@@ -152,5 +154,5 @@ export default function Player() {
                 </div>
             </div>
         </>
-    );
+);
 }
