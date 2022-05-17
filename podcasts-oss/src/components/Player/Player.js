@@ -59,7 +59,13 @@ export default function Player() {
 
     const volumeVal = audioPlayer.current.volume === 1;
 
-    const isNew = isNaN(useState(audioPlayer));
+    const isNew = () => {
+        if (isNaN(audioPlayer.current.duration)) {
+            return "undefined";
+        } else {
+            return new Date(audioPlayer.current.duration * 1000).toISOString().slice(11, 19);
+        }
+    }
 
     const playPause = () => {
         if (!isActive || audioPlayer.current.currentTime === 0) {
@@ -93,9 +99,7 @@ export default function Player() {
                         className={"w-75 audio-range"} align={"center"}
                     />
                     <p className={"text-white mx-5 h4"}>
-                        {isNew ? "" +
-                            audioPlayer.current.duration :
-                            new Date(audioPlayer.current.duration * 1000).toISOString().slice(11, 19)}
+                        {isNew()}
                     </p>
                 </div>
                 <audio
@@ -139,8 +143,19 @@ export default function Player() {
                     </span>
                     <span className={"flex-fill text-white mb-0 last-group"}>
                         <button className={"mx-3 my-4 border-none"}>
-                            <i className={volumeVal ? "fa fa-volume-up fa-3x text-white" :
-                                "fa fa-volume-mute fa-3x text-white"}/>
+{/*                            <i className={volumeVal ? "fa fa-volume-up fa-3x text-white" :
+                                "fa fa-volume-mute fa-3x text-white"}/>*/}
+                            <div className="dropup">
+        <button className="dropbtn">
+            <i className={volumeVal ? "fa fa-volume-up fa-3x text-white" :
+                "fa fa-volume-mute fa-3x text-white"}/>
+        </button>
+        <div className="dropup-content mb-4">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+      </div>
                         </button>
                         <a href={track_oss[trackIndex].fileUrl}
                            download={track_oss[index].title}
