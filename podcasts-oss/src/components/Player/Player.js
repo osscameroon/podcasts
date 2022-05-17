@@ -7,6 +7,7 @@ export default function Player() {
     const [currentTime, setCurrentTime] = useState(0);
     let [seekValue, setSeekValue] = useState(0);
     const [trackIndex, setTrackIndex] = useState(1);
+    const [volume, setVolume] = useState(0);
 
     const Truncate = (str) => {
         return str.length > 20 ? str.substring(0, 18) + "..." : str;
@@ -37,6 +38,33 @@ export default function Player() {
         }
     }
 
+    const volumeUp = () => {
+        if (volume < 1) {
+            setVolume(volume + 0.1);
+            audioPlayer.current.volume = volume + 0.1;
+        }
+    }
+
+    const volumeDown = () => {
+        if (volume > 0) {
+            setVolume(volume - 0.1);
+            audioPlayer.current.volume = volume - 0.1;
+            if ((volume - 0.1)===0){
+                setVolume(0);
+            }
+        }
+    }
+
+    const volumeMute = () => {
+        if (volume > 0) {
+            setVolume(0);
+            audioPlayer.current.volume = 0;
+        } else {
+            setVolume(1);
+            audioPlayer.current.volume = 1;
+        }
+    }
+
     const onPlaying = () => {
         if (audioPlayer.current.currentTime ===
             audioPlayer.current.duration) {
@@ -57,8 +85,6 @@ export default function Player() {
         }
     };
 
-    const volumeVal = audioPlayer.current.volume === 1;
-
     const isNew = () => {
         if (isNaN(audioPlayer.current.duration)) {
             return "undefined";
@@ -77,7 +103,6 @@ export default function Player() {
         }
     };
     const resultStart = new Date(currentTime * 1000).toISOString().slice(11, 19);
-    // const resultDuration = new Date(audioPlayer.current.duration * 1000).toISOString().slice(11, 19);
     const [isActive, setActive] = useState(false);
     return (
         <>
@@ -146,16 +171,22 @@ export default function Player() {
 {/*                            <i className={volumeVal ? "fa fa-volume-up fa-3x text-white" :
                                 "fa fa-volume-mute fa-3x text-white"}/>*/}
                             <div className="dropup">
-        <button className="dropbtn">
-            <i className={volumeVal ? "fa fa-volume-up fa-3x text-white" :
-                "fa fa-volume-mute fa-3x text-white"}/>
-        </button>
-        <div className="dropup-content mb-4">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-        </div>
-      </div>
+                                <button className="dropbtn">
+                                    <i className={"fa fa-volume-up fa-3x text-white"}/>
+                                </button>
+                                <div className="dropup-content mb-4">
+                                    <span className={"volume-tip float start"}>{Math.round(volume * 100)}</span>
+                                    <p className={"vol volume-up mt-3"} onClick={volumeUp}>
+                                        <i className={"fa fa-volume-up fa-2x"}/>
+                                    </p>
+                                    <p className={"vol volume-down mt-3"} onClick={volumeDown}>
+                                        <i className={"fa fa-volume-down fa-2x"}/>
+                                    </p>
+                                    <p className={"vol volume-down mt-3"} onClick={volumeMute}>
+                                        <i className={"fa fa-volume-mute fa-2x"}/>
+                                    </p>
+                                </div>
+                            </div>
                         </button>
                         <a href={track_oss[trackIndex].fileUrl}
                            download={track_oss[index].title}
@@ -169,5 +200,5 @@ export default function Player() {
                 </div>
             </div>
         </>
-);
+    );
 }
