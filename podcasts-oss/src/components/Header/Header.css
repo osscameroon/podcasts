@@ -8,8 +8,10 @@
 
 .sort {
     position: fixed;
-    font-size: 16px;
+    font-size: 1rem;
+    margin-left: 0 !important;
     opacity: 1;
+    color: white;
 }
 
 .header {
