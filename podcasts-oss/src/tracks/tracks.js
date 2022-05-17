@@ -5,7 +5,7 @@ export const track_oss = [
         title: 'OSS Talk Flutter Vs ReactNative',
         podName: 'The OSS Community -',
         date: '02/02/2022',
-        fileUrl: '',
+        fileUrl: 'https://raw.githubusercontent.com/muhammederdem/mini-player/master/mp3/5.mp3',
     },
     {
         id: '02',
@@ -14,6 +14,7 @@ export const track_oss = [
         podName: 'The OSS Community -',
         date: '02/05/2022',
         fileUrl: '',
+        fileUrl: 'https://raw.githubusercontent.com/muhammederdem/mini-player/master/mp3/6.mp3',
     },
     {
         id: '03',
@@ -22,6 +23,7 @@ export const track_oss = [
         podName: 'The OSS Community -',
         date: ' 02/04/2022',
         fileUrl: '',
+        fileUrl: 'https://raw.githubusercontent.com/muhammederdem/mini-player/master/mp3/4.mp3',
     },
     {
         id: '04',
@@ -29,20 +31,20 @@ export const track_oss = [
         title: 'FronEnd Development Stack',
         podName: 'The OSS Community - ',
         date: '07/04/2022',
-        fileUrl: '',
+        fileUrl: 'https://raw.githubusercontent.com/muhammederdem/mini-player/master/mp3/3.mp3',
     },
     {
         id: '05',
         title: 'Back-End Development Stack',
         podName: 'The OSS Community - ',
         date: '09/04/2022',
-        fileUrl: '',
+        fileUrl: 'https://raw.githubusercontent.com/muhammederdem/mini-player/master/mp3/2.mp3',
     },
     {
         id: '06',
         title: 'Full-Stack Development Guides',
         podName: 'The OSS Community - ',
         date: '02/03/2022',
-        fileUrl: '',
+        fileUrl: 'https://raw.githubusercontent.com/muhammederdem/mini-player/master/mp3/1.mp3',
     }
 ]
