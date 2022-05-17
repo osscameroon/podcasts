@@ -51,7 +51,7 @@ export const Header = () => {
                 <nav className="navbar navbar-expand-lg navbar-light">
                     <div className="container-fluid">
                         <div className="header_logo">
-                            <a href="/">
+                            <a href="/podcasts">
                                 <img src={podcast_logo} alt="Podcasts" className="header_logo_image"/>
                             </a>
                         </div>
@@ -74,7 +74,7 @@ export const Header = () => {
                                         />
                                     </form>
                                 </div>
-                                <a href="/" className="nav-item nav-link active">
+                                <a href="/podcasts" className="nav-item nav-link active">
                                     <i className="fa fa-sort-amount-asc sort"/>
                                 </a>
                             </div>

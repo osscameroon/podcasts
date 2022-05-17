@@ -197,19 +197,19 @@ export default function Player() {
                                     <i className="fa-solid fa-share-from-square fa-2x text-white"/>
                                 </button>
                                 <div className="dropup-content share-items mb-4">
-                                    <a href={"/"} className={"share"} onClick={volumeUp}>
+                                    <a href={"/podcasts"} className={"share"} onClick={volumeUp}>
                                         <i className={"fab fa-facebook fa-2x"}/>
                                     </a>
-                                    <a href={"/"} className={"share"} onClick={volumeDown}>
+                                    <a href={"/podcasts"} className={"share"} onClick={volumeDown}>
                                         <i className={"fab fa-twitter fa-2x"}/>
                                     </a>
-                                    <a href={"/"} className={"share"} onClick={volumeMute}>
+                                    <a href={"/podcasts"} className={"share"} onClick={volumeMute}>
                                         <i className={"fab fa-linkedin fa-2x"}/>
                                     </a>
-                                    <a href={"/"} className={"share"} onClick={volumeMute}>
+                                    <a href={"/podcasts"} className={"share"} onClick={volumeMute}>
                                         <i className={"fab fa-whatsapp fa-2x"}/>
                                     </a>
-                                    <a href={"/"} className={"share"} onClick={volumeMute}>
+                                    <a href={"/podcasts"} className={"share"} onClick={volumeMute}>
                                         <i className={"fab fa-github fa-2x"}/>
                                     </a>
                                 </div>
