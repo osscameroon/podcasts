@@ -20,6 +20,7 @@ export default function Player() {
     let index = 0;
 
     const toPrevTrack = () => {
+        setSeekValue(0);
         if (trackIndex < (track_oss.length - 1)) {
             setTrackIndex(trackIndex - 1);
             audioPlayer.current.play();
@@ -32,6 +33,7 @@ export default function Player() {
         }
     }
     const toNextTrack = () => {
+        setSeekValue(0);
         if (trackIndex < (track_oss.length - 1)) {
             audioPlayer.current.play()
             setTrackIndex(trackIndex + 1);
@@ -40,7 +42,7 @@ export default function Player() {
             audioPlayer.current.play()
         }
     }
-
+    
     const volumeUp = () => {
         if (volume < 1) {
             setVolume(volume + 0.1);
@@ -90,9 +92,16 @@ export default function Player() {
 
     const isNew = () => {
         if (isNaN(audioPlayer.current.duration)) {
-            return "undefined";
+            return "--: -- : --";
         } else {
             return new Date(audioPlayer.current.duration * 1000).toISOString().slice(11, 19);
+        }
+    }
+    const weEnd = () => {
+        if (isNaN(audioPlayer.current.duration)) {
+            return "--: -- : --";
+        } else {
+            return resultStart;
         }
     }
 
@@ -112,7 +121,9 @@ export default function Player() {
 
             <div className="mt-4 player">
                 <div className={"d-flex justify-content-center mt-5"}>
-                    <p className={"text-white mx-5 h4 fixed"}>{resultStart}</p>
+                    <p className={"text-white mx-5 h4 fixed"}>
+                        {weEnd()}
+                    </p>
                     <input
                         type="range"
                         min="0"
@@ -137,21 +148,21 @@ export default function Player() {
                 >
                 </audio>
                 <div className="w-100 d-flex">
-                    <div className={"flex-fill"}>
+                    <div className={"flex-fill fixed"}>
                         <span>
                             <i className="fa fa-microphone-lines
                             text-blue fa-5x mt-4 m-3 mb-4"/>
                         </span>
                         <span className={"text-white display-none h2"}>
-                                1- {Truncate("Working on VCS as a beginner")}
+                                {track_oss[trackIndex].id} - {Truncate(track_oss[trackIndex].title, 30)}
                         </span>
                         <span className={"text-light h5 mb-0 " +
                             "display-none row mx-3 align-center"}>
-                                The OSS Community - 02/04/2022
+                                {track_oss[trackIndex].podName}
                         </span>
                     </div>
                     <span className="d-flex text-white w-25 flex-fill
-                     mb-0 play-commands justify-content-center">
+                     mb-0 play-commands justify-content-center fixed">
                         <button className="round-button-none
                          gradient-border-none px-2 mx-2 my-4"
                                 onClick={toPrevTrack} onDoubleClick={null}>
