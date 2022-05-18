@@ -8,6 +8,19 @@ import { PodcastList } from '../podcasts_list/PodcastList';
 
 export const Header = () => {
 
+    const sortHandler = () => {
+        console.log("Clicked");
+        const sortedt = track_oss.map((t) => {
+            t.dateObj = new Date(t.date)
+            return t;
+        }).sort((a, b) => {
+            return b.dateObj - a.dateObj;
+        });
+        console.log(sortedt)
+        //console.log(track_oss.sort((a,b)=> new Date(a.date) > new Date(b.date)))
+        
+    }
+
     const [title, setTitle] = useState('');
 
     //search result
@@ -73,14 +86,11 @@ export const Header = () => {
                                             onChange={filter}
                                         />
                                         <span className="fa fa-sort-amount-asc sort btn"
+                                         onClick={sortHandler()}
                                         >
                                     </span>
                                     </form>
-
                                 </div>
-                                {/* <a href="/podcasts" className="nav-item nav-link active">
-                                    <i className="fa fa-sort-amount-asc sort"/>
-                                </a> */}
                             </div>
                         </div>
                     </div>
