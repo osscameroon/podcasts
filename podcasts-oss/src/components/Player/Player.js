@@ -138,7 +138,8 @@ export default function Player() {
                                         audioPlayer.current.duration * (+e.target.value / 100);
                                     setSeekValue(e.target.value);
                                 }}
-                                className={"w-75 audio-range"} align={"center"}
+                                className={"w-75 audio-range"}
+                                align={"center"}
                             /> :
                             <input
                                 type="range"
