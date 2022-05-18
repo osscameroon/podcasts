@@ -10,7 +10,9 @@ const PodCastComponent = ({track}) => (
                 <i className="fa fa-microphone-lines fa-5x"/>
             </div>
             <div className="mx-auto align-center">
-                <span className="track-title"> {track.id}- {track.title}</span><br/>
+                <span className="track-title">
+                    {track.id}- {track.title}
+                </span><br/>
                 <span className="track-podcast-name text-black-50">
                 {track.podName}
             </span>
