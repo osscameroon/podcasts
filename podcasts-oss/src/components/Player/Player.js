@@ -42,7 +42,7 @@ export default function Player() {
             audioPlayer.current.play()
         }
     }
-    
+
     const volumeUp = () => {
         if (volume < 1) {
             setVolume(volume + 0.1);
