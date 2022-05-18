@@ -124,19 +124,32 @@ export default function Player() {
                     <p className={"text-white mx-5 h4 fixed"}>
                         {weEnd()}
                     </p>
-                    <input
-                        type="range"
-                        min="0"
-                        max="100"
-                        step="1"
-                        value={seekValue}
-                        onChange={(e) => {
-                            audioPlayer.current.currentTime =
-                                audioPlayer.current.duration * (+e.target.value / 100);
-                            setSeekValue(e.target.value);
-                        }}
-                        className={"w-75 audio-range"} align={"center"}
-                    />
+                    {
+                        !isNaN(audioPlayer.current.duration) ?
+                            <input
+                                type="range"
+                                min="0"
+                                max="100"
+                                defaultValue={0}
+                                step="1"
+                                value={seekValue}
+                                onChange={(e) => {
+                                    audioPlayer.current.currentTime =
+                                        audioPlayer.current.duration * (+e.target.value / 100);
+                                    setSeekValue(e.target.value);
+                                }}
+                                className={"w-75 audio-range"} align={"center"}
+                            /> :
+                            <input
+                                type="range"
+                                min="0"
+                                max="100"
+                                defaultValue={0}
+                                step="1"
+                                value={0}
+                                className={"w-75 audio-range"}
+                                align={"center"}
+                            />}
                     <p className={"text-white mx-5 h4"}>
                         {isNew()}
                     </p>
@@ -155,7 +168,7 @@ export default function Player() {
                         </span>
                         <span className={"text-white display-none h2"}>
                                 {track_oss[trackIndex].id} -
-                            {Truncate((track_oss[trackIndex].title), 40)}
+                            {Truncate((track_oss[trackIndex].title), 25)}
                         </span>
                         <span className={"text-light h5 mb-0 " +
                             "display-none row mx-3 align-center"}>
