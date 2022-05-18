@@ -8,19 +8,6 @@ import { PodcastList } from '../podcasts_list/PodcastList';
 
 export const Header = () => {
 
-    const sortHandler = () => {
-        console.log("Clicked");
-        const sortedt = track_oss.map((t) => {
-            t.dateObj = new Date(t.date)
-            return t;
-        }).sort((a, b) => {
-            return b.dateObj - a.dateObj;
-        });
-        console.log(sortedt)
-        //console.log(track_oss.sort((a,b)=> new Date(a.date) > new Date(b.date)))
-        
-    }
-
     const [title, setTitle] = useState('');
 
     //search result
@@ -39,8 +26,17 @@ export const Header = () => {
         }
         setTitle(keyword);
     };
+   //sort function
+    const sortHandler = () => {
 
-
+        const sortedItems = track_oss.map((t) => {
+            t.dateObj = new Date(t.date)
+            return t;
+        }).sort((a, b) => {
+            return a.dateObj - b.dateObj;
+        });
+        setPodcastItems(sortedItems);
+    }
     const [navSize, satnavSize] = useState("10rem");
     const [navColor, satnavColor] = useState("transparent");
     const listenScrollEvent = () => {
@@ -86,7 +82,7 @@ export const Header = () => {
                                             onChange={filter}
                                         />
                                         <span className="fa fa-sort-amount-asc sort btn"
-                                         onClick={sortHandler()}
+                                            onClick={sortHandler}
                                         >
                                     </span>
                                     </form>
@@ -96,7 +92,7 @@ export const Header = () => {
                     </div>
                 </nav>
             </div>
-            <PodcastList list={podCastItems}/>
+            <PodcastList id="podcast-list" list={podCastItems}/>
         </>
     );
 };
