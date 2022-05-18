@@ -179,7 +179,7 @@ export default function Player() {
                                         "fa fa-play fa-2x mb-3"}/>
                                 </button> :
                                 <button onClick={playPause} onDoubleClick={stopOrPlay}
-                                        className="round-button fa-beat
+                                        className="round-button fa-beat-fade
                                 round-button_small gradient-border my-4">
 
                                     <i className={"fa fa-play fa-2x mb-3"}/>
