@@ -8,7 +8,7 @@ const PodCastComponent = ({track}) => (
             </div>
             <div className="mx-auto align-center">
                 <span className="track-title"> {track.id}- {track.title}</span><br/>
-                <span className="track-podcast-name text-black-50">{track.podName}</span>
+                <span className="track-podcast-name text-black-50">{track.podName}{track.date}</span>
                 <div className="float-end">
                     <a href="/" className="border-light bg-transparent text-dark" type="download">
                         <i className="fa-solid fa-down-to-bracket" aria-hidden="true"/>
