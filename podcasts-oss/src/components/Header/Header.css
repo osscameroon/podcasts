@@ -9,7 +9,11 @@
 .sort {
     position: fixed;
     font-size: 16px;
+    font-size: 1rem;
+    margin: 0 !important;
+    padding: 0px;
     opacity: 1;
+    color: white;
 }
 
 .header {
