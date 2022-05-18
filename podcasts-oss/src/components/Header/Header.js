@@ -72,11 +72,15 @@ export const Header = () => {
                                             placeholder="Search podcasts..."
                                             onChange={filter}
                                         />
+                                        <span className="fa fa-sort-amount-asc sort btn"
+                                        >
+                                    </span>
                                     </form>
+
                                 </div>
-                                <a href="/podcasts" className="nav-item nav-link active">
+                                {/* <a href="/podcasts" className="nav-item nav-link active">
                                     <i className="fa fa-sort-amount-asc sort"/>
-                                </a>
+                                </a> */}
                             </div>
                         </div>
                     </div>
