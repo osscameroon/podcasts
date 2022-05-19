@@ -26,8 +26,17 @@ export const Header = () => {
         }
         setTitle(keyword);
     };
+   //sort function
+    const sortHandler = () => {
 
-
+        const sortedItems = track_oss.map((t) => {
+            t.dateObj = new Date(t.date)
+            return t;
+        }).sort((a, b) => {
+            return a.dateObj - b.dateObj;
+        });
+        setPodcastItems(sortedItems);
+    }
     const [navSize, satnavSize] = useState("10rem");
     const [navColor, satnavColor] = useState("transparent");
     const listenScrollEvent = () => {
@@ -72,17 +81,18 @@ export const Header = () => {
                                             placeholder="Search podcasts..."
                                             onChange={filter}
                                         />
+                                        <span className="fa fa-sort-amount-asc sort btn"
+                                            onClick={sortHandler}
+                                        >
+                                    </span>
                                     </form>
                                 </div>
-                                <a href="/podcasts" className="nav-item nav-link active">
-                                    <i className="fa fa-sort-amount-asc sort"/>
-                                </a>
                             </div>
                         </div>
                     </div>
                 </nav>
             </div>
-            <PodcastList list={podCastItems}/>
+            <PodcastList id="podcast-list" list={podCastItems}/>
         </>
     );
 };

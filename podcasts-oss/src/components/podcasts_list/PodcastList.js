@@ -16,7 +16,7 @@ const PodCastComponent = ({track}) => (
                 <span className="track-podcast-name text-black-50">
                 {track.podName}
             </span>
-                <div className="float-end">
+              <div className="float-end">
                     <a href={track.fileUrl} className="border-light bg-transparent text-dark"
                        type="download">
                         <i className="fa-solid fa-down-to-bracket" aria-hidden="true"/>
