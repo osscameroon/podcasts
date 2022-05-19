@@ -9,8 +9,8 @@ export default function Player() {
     const [trackIndex, setTrackIndex] = useState(1);
     const [volume, setVolume] = useState(0);
 
-    const Truncate = (str) => {
-        return str.length > 20 ? str.substring(0, 18) + "..." : str;
+    const Truncate = (str, val) => {
+        return str.length > 20 ? str.substring(0, val) + "..." : str;
     }
 
     const stopOrPlay = () => {
@@ -20,6 +20,7 @@ export default function Player() {
     let index = 0;
 
     const toPrevTrack = () => {
+        setSeekValue(0);
         if (trackIndex < (track_oss.length - 1)) {
             setTrackIndex(trackIndex - 1);
             audioPlayer.current.play();
@@ -32,6 +33,7 @@ export default function Player() {
         }
     }
     const toNextTrack = () => {
+        setSeekValue(0);
         if (trackIndex < (track_oss.length - 1)) {
             audioPlayer.current.play()
             setTrackIndex(trackIndex + 1);
@@ -90,9 +92,16 @@ export default function Player() {
 
     const isNew = () => {
         if (isNaN(audioPlayer.current.duration)) {
-            return "undefined";
+            return "--: -- : --";
         } else {
             return new Date(audioPlayer.current.duration * 1000).toISOString().slice(11, 19);
+        }
+    }
+    const weEnd = () => {
+        if (isNaN(audioPlayer.current.duration)) {
+            return "--: -- : --";
+        } else {
+            return resultStart;
         }
     }
 
@@ -112,20 +121,36 @@ export default function Player() {
 
             <div className="mt-4 player">
                 <div className={"d-flex justify-content-center mt-5"}>
-                    <p className={"text-white mx-5 h4 fixed"}>{resultStart}</p>
-                    <input
-                        type="range"
-                        min="0"
-                        max="100"
-                        step="1"
-                        value={seekValue}
-                        onChange={(e) => {
-                            audioPlayer.current.currentTime =
-                                audioPlayer.current.duration * (+e.target.value / 100);
-                            setSeekValue(e.target.value);
-                        }}
-                        className={"w-75 audio-range"} align={"center"}
-                    />
+                    <p className={"text-white mx-5 h4 fixed"}>
+                        {weEnd()}
+                    </p>
+                    {
+                        !isNaN(audioPlayer.current.duration) ?
+                            <input
+                                type="range"
+                                min="0"
+                                max="100"
+                                defaultValue={0}
+                                step="1"
+                                value={seekValue}
+                                onChange={(e) => {
+                                    audioPlayer.current.currentTime =
+                                        audioPlayer.current.duration * (+e.target.value / 100);
+                                    setSeekValue(e.target.value);
+                                }}
+                                className={"w-75 audio-range"}
+                                align={"center"}
+                            /> :
+                            <input
+                                type="range"
+                                min="0"
+                                max="100"
+                                defaultValue={0}
+                                step="1"
+                                value={0}
+                                className={"w-75 audio-range"}
+                                align={"center"}
+                            />}
                     <p className={"text-white mx-5 h4"}>
                         {isNew()}
                     </p>
@@ -137,32 +162,43 @@ export default function Player() {
                 >
                 </audio>
                 <div className="w-100 d-flex">
-                    <div className={"flex-fill"}>
+                    <div className={"flex-fill fixed"}>
                         <span>
                             <i className="fa fa-microphone-lines
                             text-blue fa-5x mt-4 m-3 mb-4"/>
                         </span>
                         <span className={"text-white display-none h2"}>
-                                1- {Truncate("Working on VCS as a beginner")}
+                                {track_oss[trackIndex].id} -
+                            {Truncate((track_oss[trackIndex].title), 25)}
                         </span>
                         <span className={"text-light h5 mb-0 " +
                             "display-none row mx-3 align-center"}>
-                                The OSS Community - 02/04/2022
+                                {track_oss[trackIndex].podName}
                         </span>
                     </div>
                     <span className="d-flex text-white w-25 flex-fill
-                     mb-0 play-commands justify-content-center">
+                     mb-0 play-commands justify-content-center fixed">
                         <button className="round-button-none
                          gradient-border-none px-2 mx-2 my-4"
                                 onClick={toPrevTrack} onDoubleClick={null}>
                             <i className="fas fa-step-backward fa-2x"/>
                         </button>
-                        <button onClick={playPause} onDoubleClick={stopOrPlay}
-                                className="round-button
+                        {
+                            !isNaN(audioPlayer.current.duration) ?
+                                <button onClick={playPause} onDoubleClick={stopOrPlay}
+                                        className="round-button
                                 round-button_small gradient-border my-4">
-                            <i className={isActive ? "fa fa-pause fa-2x mb-3" :
-                                "fa fa-play fa-2x mb-3"}/>
-                        </button>
+
+                                    <i className={isActive ? "fa fa-pause fa-2x mb-3" :
+                                        "fa fa-play fa-2x mb-3"}/>
+                                </button> :
+                                <button onClick={playPause} onDoubleClick={stopOrPlay}
+                                        className="round-button fa-beat-fade
+                                round-button_small gradient-border my-4">
+
+                                    <i className={"fa fa-play fa-2x mb-3"}/>
+                                </button>
+                        }
                         <button className="round-button-none
                         gradient-border-none px-2 mx-2 my-4"
                                 onClick={toNextTrack} onDoubleClick={null}>
@@ -176,7 +212,9 @@ export default function Player() {
                                     <i className={"fa fa-volume-up fa-2x text-white"}/>
                                 </button>
                                 <div className="dropup-content mb-4">
-                                    <span className={"volume-tip float start"}>{Math.round(volume * 100)}</span>
+                                    <span className={"volume-tip float start"}>
+                                        {Math.round(volume * 100)}
+                                    </span>
                                     <p className={"vol volume-up mt-3"} onClick={volumeUp}>
                                         <i className={"fa fa-volume-up fa-2x"}/>
                                     </p>
