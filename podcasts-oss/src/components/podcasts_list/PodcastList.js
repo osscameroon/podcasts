@@ -3,8 +3,8 @@ import './PodcastList.css'
 import Player from "../Player/Player";
 
 
-const PodCastComponent = ({track}) => (
-    <li className={"trackContainer " + track.active}>
+export const PodCastComponent = ({track, onClick}) => (
+    <li className={"trackContainer " + track.active} onClick={onClick}>
         <div>
             <div className="float-start">
                 <i className="fa fa-microphone-lines fa-5x"/>
