@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import './Header.css';
-import '../Header/searchForm/searchForm.css';
 import podcast_logo from '../../assets/podcast_logo.png';
 import {track_oss} from '../../tracks/tracks';
 import {PodcastList} from '../podcasts_list/PodcastList';
