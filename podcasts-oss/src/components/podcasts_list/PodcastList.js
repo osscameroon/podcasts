@@ -15,7 +15,7 @@ export const PodCastComponent = ({track, onClick}) => (
                     {track.id}- {track.title}
                 </span><br/>
                 <span className="track-podcast-name text-black-50">
-                {track.podName}
+                {track.podName} - {track.date}
             </span>
                 <div className="float-end">
                     <a href={track.fileUrl} className="border-light bg-transparent text-dark"
