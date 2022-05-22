@@ -1,8 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import './Header.css';
 import podcast_logo from '../../assets/podcast_logo.png';
 import {track_oss} from '../../tracks/tracks';
-import {PodcastList} from '../podcasts_list/PodcastList';
+import PodcastList from '../podcasts_list/PodcastList';
+import AppContext from "../AppContext/AppContext";
 
 
 export const Header = () => {
@@ -10,7 +11,7 @@ export const Header = () => {
     const [title, setTitle] = useState('');
 
     //search result
-    const [podCastItems, setPodcastItems] = useState(track_oss)
+    const {podCastItems, setPodcastItems} = useContext(AppContext);
 
     const filter = (e) => {
         const keyword = e.target.value;
