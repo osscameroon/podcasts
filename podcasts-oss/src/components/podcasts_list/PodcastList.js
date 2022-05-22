@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useContext} from "react";
 import './PodcastList.css'
 import Player from "../Player/Player";
+import AppContext from "../AppContext/AppContext";
 
 
 export const PodCastComponent = ({track, onClick}) => (
@@ -16,7 +17,7 @@ export const PodCastComponent = ({track, onClick}) => (
                 <span className="track-podcast-name text-black-50">
                 {track.podName}
             </span>
-              <div className="float-end">
+                <div className="float-end">
                     <a href={track.fileUrl} className="border-light bg-transparent text-dark"
                        type="download">
                         <i className="fa-solid fa-down-to-bracket" aria-hidden="true"/>
@@ -27,17 +28,22 @@ export const PodCastComponent = ({track, onClick}) => (
     </li>
 )
 
-export const PodcastList = ({list}) => (
-    <>
-        <ul>
-            <div className="container">
-                <div className="row">
-                    <div className="col-xs-12 col-sm-8 col-md-8 mx-auto">
-                        {list.map((track) => <PodCastComponent track={track}/>)};
+export default function PodcastList({list}) {
+    const {trackIndex, setTrackIndex} = useContext(AppContext);
+    return (
+        <>
+            <ul>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-xs-12 col-sm-8 col-md-8 mx-auto">
+                            {list.map((track) => <PodCastComponent track={track} onClick={function () {
+                                setTrackIndex(Number(track.id) - 1);
+                            }}/>)}
+                        </div>
                     </div>
                 </div>
-            </div>
-        </ul>
-        <Player/>
-    </>
-);
+            </ul>
+            <Player/>
+        </>
+    )
+}
