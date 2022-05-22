@@ -29,16 +29,20 @@ export const PodCastComponent = ({track, onClick}) => (
 )
 
 export default function PodcastList({list}) {
-    const {trackIndex, setTrackIndex} = useContext(AppContext);
+    const {setTrackIndex} = useContext(AppContext);
     return (
         <>
             <ul>
                 <div className="container">
                     <div className="row">
                         <div className="col-xs-12 col-sm-8 col-md-8 mx-auto">
-                            {list.map((track) => <PodCastComponent track={track} onClick={function () {
-                                setTrackIndex(Number(track.id) - 1);
-                            }}/>)}
+                            {list.map((track) => <PodCastComponent
+                                    track={track}
+                                    onClick={function () {
+                                        setTrackIndex(Number(track.id) - 1);
+                                    }}
+                                />
+                            )}
                         </div>
                     </div>
                 </div>
