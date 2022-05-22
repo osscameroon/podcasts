@@ -1,14 +1,14 @@
-import React, {useRef, useState} from "react";
+import React, {useContext, useRef, useState} from "react";
 import './Player.css';
 import {track_oss} from "../../tracks/tracks";
-import {PodCastComponent} from '../podcasts_list/PodcastList'
+import AppContext from "../AppContext/AppContext";
 
 export default function Player() {
     const audioPlayer = useRef(0);
-    const [currentTime, setCurrentTime] = useState(0);
-    let [seekValue, setSeekValue] = useState(0);
-    const [trackIndex, setTrackIndex] = useState(0);
-    const [volume, setVolume] = useState(0);
+    const {currentTime, setCurrentTime} = useContext(AppContext);
+    let {seekValue, setSeekValue} = useContext(AppContext);
+    const {trackIndex, setTrackIndex} = useContext(AppContext);
+    const [volume, setVolume] = useState(audioPlayer.volume | 1);
 
     const Truncate = (str, val) => {
         return str.length > 20 ? str.substring(0, val) + "..." : str;
@@ -45,14 +45,14 @@ export default function Player() {
     }
 
     const volumeUp = () => {
-        if (volume < 1) {
+        if (volume < 0.9) {
             setVolume(volume + 0.1);
             audioPlayer.current.volume = volume + 0.1;
         }
     }
 
     const volumeDown = () => {
-        if (volume > 0) {
+        if (volume > 0.1) {
             setVolume(volume - 0.1);
             audioPlayer.current.volume = volume - 0.1;
             if ((volume - 0.1) === 0) {
@@ -119,19 +119,6 @@ export default function Player() {
     const [isActive, setActive] = useState(false);
     return (
         <>
-            <ul>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-xs-12 col-sm-8 col-md-8 mx-auto">
-                            {track_oss.map((track) => <PodCastComponent
-                                onClick={function() {
-                                    setTrackIndex(Number(track.id) -1);
-                                }} track={track}/>)};
-                        </div>
-                    </div>
-                </div>
-            </ul>
-
             <div className="mt-4 player">
                 <div className={"d-flex justify-content-center mt-5"}>
                     <p className={"text-white mx-5 h4 fixed"}>
