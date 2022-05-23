@@ -1,10 +1,11 @@
-import React from "react";
+import React, {useContext} from "react";
 import './PodcastList.css'
 import Player from "../Player/Player";
+import AppContext from "../AppContext/AppContext";
 
 
-const PodCastComponent = ({track}) => (
-    <li className={"trackContainer " + track.active}>
+export const PodCastComponent = ({track, onClick}) => (
+    <li className={"trackContainer " + track.active} onClick={onClick}>
         <div>
             <div className="float-start">
                 <i className="fa fa-microphone-lines fa-5x"/>
@@ -14,9 +15,9 @@ const PodCastComponent = ({track}) => (
                     {track.id}- {track.title}
                 </span><br/>
                 <span className="track-podcast-name text-black-50">
-                {track.podName}
+                {track.podName} - {track.date}
             </span>
-              <div className="float-end">
+                <div className="float-end">
                     <a href={track.fileUrl} className="border-light bg-transparent text-dark"
                        type="download">
                         <i className="fa-solid fa-down-to-bracket" aria-hidden="true"/>
@@ -27,17 +28,26 @@ const PodCastComponent = ({track}) => (
     </li>
 )
 
-export const PodcastList = ({list}) => (
-    <>
-        <ul>
-            <div className="container">
-                <div className="row">
-                    <div className="col-xs-12 col-sm-8 col-md-8 mx-auto">
-                        {list.map((track) => <PodCastComponent track={track}/>)};
+export default function PodcastList({list}) {
+    const {setTrackIndex} = useContext(AppContext);
+    return (
+        <>
+            <ul>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-xs-12 col-sm-8 col-md-8 mx-auto">
+                            {list.map((track) => <PodCastComponent
+                                    track={track}
+                                    onClick={function () {
+                                        setTrackIndex(Number(track.id) - 1);
+                                    }}
+                                />
+                            )}
+                        </div>
                     </div>
                 </div>
-            </div>
-        </ul>
-        <Player/>
-    </>
-);
+            </ul>
+            <Player/>
+        </>
+    )
+}

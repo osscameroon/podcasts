@@ -1,13 +1,14 @@
-import React, {useRef, useState} from "react";
+import React, {useContext, useRef, useState} from "react";
 import './Player.css';
 import {track_oss} from "../../tracks/tracks";
+import AppContext from "../AppContext/AppContext";
 
 export default function Player() {
     const audioPlayer = useRef(0);
-    const [currentTime, setCurrentTime] = useState(0);
-    let [seekValue, setSeekValue] = useState(0);
-    const [trackIndex, setTrackIndex] = useState(1);
-    const [volume, setVolume] = useState(0);
+    const {currentTime, setCurrentTime} = useContext(AppContext);
+    let {seekValue, setSeekValue} = useContext(AppContext);
+    const {trackIndex, setTrackIndex} = useContext(AppContext);
+    const [volume, setVolume] = useState(audioPlayer.volume | 1);
 
     const Truncate = (str, val) => {
         return str.length > 20 ? str.substring(0, val) + "..." : str;
@@ -44,14 +45,14 @@ export default function Player() {
     }
 
     const volumeUp = () => {
-        if (volume < 1) {
+        if (volume < 0.9) {
             setVolume(volume + 0.1);
             audioPlayer.current.volume = volume + 0.1;
         }
     }
 
     const volumeDown = () => {
-        if (volume > 0) {
+        if (volume > 0.1) {
             setVolume(volume - 0.1);
             audioPlayer.current.volume = volume - 0.1;
             if ((volume - 0.1) === 0) {
@@ -118,7 +119,6 @@ export default function Player() {
     const [isActive, setActive] = useState(false);
     return (
         <>
-
             <div className="mt-4 player">
                 <div className={"d-flex justify-content-center mt-5"}>
                     <p className={"text-white mx-5 h4 fixed"}>
