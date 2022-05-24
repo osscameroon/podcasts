@@ -1,5 +1,5 @@
 .header_logo > a > img {
-    width: 200px;
+    width: 10rem;
 }
 
 .header_logo {
@@ -19,6 +19,7 @@
     position: sticky;
     top: 0;
     z-index: 1020;
+    height: 5rem;
 }
 
 .header-on-scroll {
@@ -42,6 +43,10 @@ form {
     background: #0C344B 0 0 no-repeat padding-box;
 }
 
+.no_submit {
+    margin-left: 5.5rem;
+    padding: 0!important;
+}
 input[type="search"] {
     background: #0C344B;
     color: #E4E4E4;
