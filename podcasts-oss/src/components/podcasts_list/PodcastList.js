@@ -8,19 +8,19 @@ export const PodCastComponent = ({track, onClick}) => (
     <li className={"trackContainer " + track.active} onClick={onClick}>
         <div>
             <div className="float-start">
-                <i className="fa fa-microphone-lines fa-5x"/>
+                <i className="fa fa-microphone-lines fa-2x"/>
             </div>
-            <div className="mx-auto align-center">
+            <div className="">
                 <span className="track-title">
                     {track.id}- {track.title}
                 </span><br/>
                 <span className="track-podcast-name text-black-50">
-                {track.podName} - {track.date}
+                {track.podName} {track.date}
             </span>
-                <div className="float-end">
+                <div className="float-end" id="download">
                     <a href={track.fileUrl} className="border-light bg-transparent text-dark"
                        type="download">
-                        <i className="fa-solid fa-down-to-bracket" aria-hidden="true"/>
+                        <i className="fa-solid fa-down-to-bracket"  aria-hidden="true"/>
                     </a>
                 </div>
             </div>
