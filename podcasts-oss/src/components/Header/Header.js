@@ -54,7 +54,7 @@ export const Header = () => {
         <>
             <div className="header" style={{
                 backgroundColor: navColor,
-                height: navSize,
+                //height: navSize,
                 transition: "all 1s"
             }}>
                 <nav className="navbar navbar-expand-lg navbar-light">
@@ -73,9 +73,9 @@ export const Header = () => {
                         <div className="collapse navbar-collapse" id="navbarCollapse">
                             <div className="navbar-nav">
                                 <div>
-                                    <form className="no_submit mx-5">
+                                    <form className="no_submit ">
                                         <input
-                                            className="no_submit col-xs-4 px-5 input-sm"
+                                            className="no_submit col-xs-4 px-3 input-sm"
                                             type="search"
                                             value={title}
                                             placeholder="Search podcasts..."
