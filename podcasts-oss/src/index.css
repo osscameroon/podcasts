@@ -19,17 +19,47 @@ body {
     background-size: 309px, 299px, cover;
     background-attachment: fixed;
 }
-
+#track{
+    padding-right: 40%;
+}
 @media (min-width: 996px) {
     .sort {
         margin-left: 120px;
     }
-
+    
     input {
         margin-left: 5630px;
     }
+    .side-bar{
+        position: fixed; 
+        z-index: 1;
+        margin: 0 !important;
+        padding:0 !important;
+        flex-direction: column-reverse;
+    }
+    
+    
 }
-
+#tele{
+    padding-top: 40px;
+    margin-right: 80px;
+    font-family:'Comfortaa';
+    color: #c4c1c1fa;
+    font-size: 20px;
+    word-spacing: 0px;
+}
+#comm{
+    font-size: 23px;
+}
+#line{
+    width: 45%;
+    border: 3px solid #B6DEF5;
+   
+}
+#teleg{
+    width: 45%;
+    size: 40px;
+}
 @media (min-width: 100px) and (max-width: 983px){
     body {
         background-size: 250px, 200px, cover;
@@ -39,7 +69,7 @@ body {
         margin-top: 12px;
         position: sticky;
     }
-
+   
     input {
         width: 100%;
     }
@@ -71,4 +101,15 @@ body {
         position: sticky;
         width: 100%;
     }
+    
+    
 }
+.row{
+    margin:0 !important 
+}
+.container{
+    margin: 0 !important;
+}
+/* ul{
+    margin: 0 !important;
+} */
