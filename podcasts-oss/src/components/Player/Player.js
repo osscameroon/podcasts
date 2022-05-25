@@ -8,11 +8,8 @@ export default function Player() {
     const {currentTime, setCurrentTime} = useContext(AppContext);
     let {seekValue, setSeekValue} = useContext(AppContext);
     const {trackIndex, setTrackIndex} = useContext(AppContext);
+    const {Truncate} = useContext(AppContext);
     const [volume, setVolume] = useState(audioPlayer.volume | 1);
-
-    const Truncate = (str, val) => {
-        return str.length > 20 ? str.substring(0, val) + "..." : str;
-    }
 
     const stopOrPlay = () => {
         audioPlayer.current.currentTime = 0;
@@ -116,7 +113,7 @@ export default function Player() {
         }
     };
     const resultStart = new Date(currentTime * 1000).toISOString().slice(11, 19);
-    const [isActive, setActive] = useState(false);
+    const {isActive, setActive} = useContext(AppContext);
     return (
         <>
             <div className="mt-4 player">
