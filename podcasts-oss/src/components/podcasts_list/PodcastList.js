@@ -2,6 +2,7 @@ import React, {useContext} from "react";
 import './PodcastList.css'
 import Player from "../Player/Player";
 import AppContext from "../AppContext/AppContext";
+import { FaTelegramPlane} from "react-icons/fa";
 
 
 export const PodCastComponent = ({track, onClick}) => (
@@ -26,6 +27,7 @@ export const PodCastComponent = ({track, onClick}) => (
             </div>
         </div>
     </li>
+    
 )
 
 export default function PodcastList({list}) {
@@ -35,7 +37,18 @@ export default function PodcastList({list}) {
             <ul>
                 <div className="container">
                     <div className="row">
-                        <div className="col-xs-12 col-sm-8 col-md-8 mx-auto">
+                        <div className="side-bar col-3">
+                            <span className="">
+                                <p id="tele">
+                                In just a click on the plane below, Join the <span id="comm">OSS Community</span> <br/> now!
+                                </p>
+                                <hr id="line"/>
+                                <span>
+                               <a href="" className="fa-5x"><FaTelegramPlane  id="teleg"/></a>
+                            </span>
+                            </span>
+                        </div>
+                        <div className="col-xs-12 col-sm-8 col-md-8 mx-auto" id="tracks">
                             {list.map((track) => <PodCastComponent
                                     track={track}
                                     onClick={function () {
