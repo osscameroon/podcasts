@@ -168,90 +168,90 @@ export default function Player() {
                             text-blue fa-5x mt-4 m-3 mb-4"/>
                         </span>
                         <span className={"text-white display-none h2"}>
-                                {track_oss[trackIndex].id} -
+                            {track_oss[trackIndex].id} -
                             {Truncate((track_oss[trackIndex].title), 25)}
                         </span>
                         <span className={"text-light h5 mb-0 " +
                             "display-none row mx-3 align-center"}>
-                                {track_oss[trackIndex].podName}
+                            {track_oss[trackIndex].podName}
                         </span>
                     </div>
                     <span className="d-flex text-white w-25 flex-fill
                      mb-0 play-commands justify-content-center fixed">
                         <button className="round-button-none
                          gradient-border-none px-2 mx-2 my-4"
-                                onClick={toPrevTrack} onDoubleClick={null}>
-                            <i className="fas fa-step-backward fa-2x"/>
+                            onClick={toPrevTrack} onDoubleClick={null}>
+                            <i className="fas fa-step-backward fa-2x" />
                         </button>
                         {
                             !isNaN(audioPlayer.current.duration) ?
                                 <button onClick={playPause} onDoubleClick={stopOrPlay}
-                                        className="round-button
+                                    className="round-button
                                 round-button_small gradient-border my-4">
 
                                     <i className={isActive ? "fa fa-pause fa-2x mb-3" :
-                                        "fa fa-play fa-2x mb-3"}/>
+                                        "fa fa-play fa-2x mb-3"} />
                                 </button> :
                                 <button onClick={playPause} onDoubleClick={stopOrPlay}
-                                        className="round-button fa-beat-fade
+                                    className="round-button fa-beat-fade
                                 round-button_small gradient-border my-4">
 
-                                    <i className={"fa fa-play fa-2x mb-3"}/>
+                                    <i className={"fa fa-play fa-2x mb-3"} />
                                 </button>
                         }
                         <button className="round-button-none
                         gradient-border-none px-2 mx-2 my-4"
-                                onClick={toNextTrack} onDoubleClick={null}>
-                            <i className="fas fa-step-forward fa-2x"/>
+                            onClick={toNextTrack} onDoubleClick={null}>
+                            <i className="fas fa-step-forward fa-2x" />
                         </button>
                     </span>
                     <span className={"flex-fill text-white mb-0 last-group"}>
                         <button className={"mx-3 my-4 border-none"}>
                             <div className="dropup">
                                 <button className="dropbtn">
-                                    <i className={"fa fa-volume-up fa-2x text-white"}/>
+                                    <i className={"fa fa-volume-up fa-2x text-white"} />
                                 </button>
                                 <div className="dropup-content mb-4">
                                     <span className={"volume-tip float start"}>
                                         {Math.round(volume * 100)}
                                     </span>
                                     <p className={"vol volume-up mt-3"} onClick={volumeUp}>
-                                        <i className={"fa fa-volume-up fa-2x"}/>
+                                        <i className={"fa fa-volume-up fa-2x"} />
                                     </p>
                                     <p className={"vol volume-down mt-3"} onClick={volumeDown}>
-                                        <i className={"fa fa-volume-down fa-2x"}/>
+                                        <i className={"fa fa-volume-down fa-2x"} />
                                     </p>
                                     <p className={"vol volume-down mt-3"} onClick={volumeMute}>
-                                        <i className={"fa fa-volume-mute fa-2x"}/>
+                                        <i className={"fa fa-volume-mute fa-2x"} />
                                     </p>
                                 </div>
                             </div>
                         </button>
                         <a href={track_oss[trackIndex].fileUrl}
-                           download={track_oss[index].title}
-                           className={"mx-3 my-4 border-none"}>
-                            <i className="fa fa-down-to-bracket fa-3x text-white"/>
+                            download={track_oss[index].title}
+                            className={"mx-3 my-4 border-none"}>
+                            <i className="fa fa-down-to-bracket fa-3x text-white" />
                         </a>
                         <button className={"mx-3 my-4 border-none"}>
                             <div className="dropup">
                                 <button className="dropbtn">
-                                    <i className="fa-solid fa-share-from-square fa-2x text-white"/>
+                                    <i className="fa-solid fa-share-from-square fa-2x text-white" />
                                 </button>
                                 <div className="dropup-content share-items mb-4">
                                     <a href={"/podcasts"} className={"share"} onClick={volumeUp}>
-                                        <i className={"fab fa-facebook fa-2x"}/>
+                                        <i className={"fab fa-facebook fa-2x"} />
                                     </a>
                                     <a href={"/podcasts"} className={"share"} onClick={volumeDown}>
-                                        <i className={"fab fa-twitter fa-2x"}/>
+                                        <i className={"fab fa-twitter fa-2x"} />
                                     </a>
                                     <a href={"/podcasts"} className={"share"} onClick={volumeMute}>
-                                        <i className={"fab fa-linkedin fa-2x"}/>
+                                        <i className={"fab fa-linkedin fa-2x"} />
                                     </a>
                                     <a href={"/podcasts"} className={"share"} onClick={volumeMute}>
-                                        <i className={"fab fa-whatsapp fa-2x"}/>
+                                        <i className={"fab fa-whatsapp fa-2x"} />
                                     </a>
                                     <a href={"/podcasts"} className={"share"} onClick={volumeMute}>
-                                        <i className={"fab fa-github fa-2x"}/>
+                                        <i className={"fab fa-github fa-2x"} />
                                     </a>
                                 </div>
                             </div>
