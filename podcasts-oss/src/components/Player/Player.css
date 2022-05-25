@@ -6,6 +6,7 @@
     height: 200px;
     z-index: 1020;
     width: 100%;
+    padding-bottom: 90px;
 }
 
 input[type="range"] {
