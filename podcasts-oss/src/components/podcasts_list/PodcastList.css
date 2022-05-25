@@ -1,59 +1,45 @@
-li{
+li {
     background-color: #B6DEF5;
     margin: 10px 0 10px 0;
-   
+
 }
-li:active{
+
+li:active {
     background-color: #74C5F3;
 }
-li:hover{
+
+li:hover {
     background-color: #74C5F3;
 }
-li{
+
+li {
     list-style-type: none;
 }
 
-/* .track-title{
-    font-size: 2px;
-    font-weight: bold;
-    padding: 20px 5px 20px 5px;
-    width: fit-content;
-} */
-
-.trackContainer{
+.trackContainer {
     height: 7rem;
 }
 
-.trackContainer.active{
+.trackContainer.active {
     border-left: #0C344B solid 5px;
     background-color: #74C5F3;
 }
 
-.trackContainer>* {
+.trackContainer > * {
     padding: 25px;
 }
 
-.fa-down-to-bracket{
+.fa-down-to-bracket {
     font-size: 27px;
     width: 20px;
     top: 0;
     column-count: 1;
     column-gap: 20px;
 }
-#download{
-    padding-bottom: 20px;
-}
-.track-title{
+
+.track-title {
     font-weight: bold;
-    font-size: 20px;
-    padding: 15px 0px 2px 0px;
+    padding: 15px 0 2px 0;
     font-family: GoogleSans, sans-serif bold;
-    margin-left:3rem;
-}
-.track-podcast-name{
-    margin-left:3rem;
-}
-
-.track-podcast-name{
-
+    margin-left: 0.3rem;
 }
