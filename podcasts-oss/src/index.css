@@ -44,7 +44,7 @@ body {
     padding-top: 40px;
     margin-right: 80px;
     font-family:'Comfortaa';
-    color: #c4c1c1fa;
+    color: rgb(243, 237, 237);
     font-size: 20px;
     word-spacing: 0px;
 }
@@ -53,7 +53,7 @@ body {
 }
 #line{
     width: 45%;
-    border: 3px solid #B6DEF5;
+    border: 3px solid #46b7f8;
    
 }
 #teleg{
