@@ -26,7 +26,7 @@ export const Header = () => {
         }
         setTitle(keyword);
     };
-   //sort function
+    //sort function
     const sortHandler = () => {
 
         const sortedItems = track_oss.map((t) => {
@@ -37,11 +37,11 @@ export const Header = () => {
         });
         setPodcastItems(sortedItems);
     }
-    const [navSize, satnavSize] = useState("10rem");
+    const [navSize, satnavSize] = useState("6rem");
     const [navColor, satnavColor] = useState("transparent");
     const listenScrollEvent = () => {
         window.scrollY > 10 ? satnavColor("rgb(119,96,248)") : satnavColor("transparent");
-        window.scrollY > 10 ? satnavSize("10rem") : satnavSize("10rem");
+        window.scrollY > 10 ? satnavSize("6rem") : satnavSize("6rem");
     };
     useEffect(() => {
         window.addEventListener("scroll", listenScrollEvent);
@@ -54,7 +54,7 @@ export const Header = () => {
         <>
             <div className="header" style={{
                 backgroundColor: navColor,
-                //height: navSize,
+                height: navSize,
                 transition: "all 1s"
             }}>
                 <nav className="navbar navbar-expand-lg navbar-light">
@@ -71,23 +71,17 @@ export const Header = () => {
                             </span>
                         </button>
                         <div className="collapse navbar-collapse" id="navbarCollapse">
-                            <div className="navbar-nav">
-                                <div>
-                                    <form className="no_submit ">
-                                        <input
-                                            className="no_submit col-xs-4 px-3 input-sm"
-                                            type="search"
-                                            value={title}
-                                            placeholder="Search podcasts..."
-                                            onChange={filter}
-                                        />
-                                        <span className="fa fa-sort-amount-asc sort btn"
-                                            onClick={sortHandler}
-                                        >
+                            <input
+                                className="no_submit w-50 bg-primary px-3 input-sm"
+                                type="search"
+                                value={title}
+                                placeholder="Search podcasts..."
+                                onChange={filter}
+                            />
+                            <span className="fa fa-sort-amount-asc sort btn"
+                                  onClick={sortHandler}
+                            >
                                     </span>
-                                    </form>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </nav>
