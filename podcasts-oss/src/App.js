@@ -16,6 +16,10 @@ function App() {
     const [currentTime, setCurrentTime] = useState(0);
     const [seekValue, setSeekValue] = useState(0);
     const [trackIndex, setTrackIndex] = useState(0);
+    const [isActive, setActive] = useState(false);
+    const Truncate = (str, val) => {
+        return str.length > 20 ? str.substring(0, val) + "..." : str;
+    }
     return (
         <div className="App">
             <AppContext.Provider
@@ -23,7 +27,8 @@ function App() {
                     podCastItems, setPodcastItems,
                     seekValue, audioPlayer, currentTime,
                     setCurrentTime, setSeekValue,
-                    trackIndex, setTrackIndex
+                    trackIndex, setTrackIndex, Truncate,
+                    isActive, setActive
                 }}>
                 <Header/>
                 <Button/>
