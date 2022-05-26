@@ -1,7 +1,7 @@
 # OssCameroon Podcasts
 ![podcast_logo](https://user-images.githubusercontent.com/71908316/162823953-f69840a1-d47d-4d01-adb6-5722483770a0.png)
 
-This podcast build preview can be [here](https://go-records.me/podcasts), deployment made using [Github pages](https://pages.github.com/)
+This podcast build preview can be [here](https://osscameroon.github.io/podcasts), deployment made using [Github pages](https://pages.github.com/)
 
 Initiative of [OssCameroon](https://osscameroon.com/) under the [MIT license](https://opensource.org/licenses/MIT)
 
