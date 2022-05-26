@@ -130,7 +130,6 @@ export default function Player() {
                                 type="range"
                                 min="0"
                                 max="100"
-                                defaultValue={0}
                                 step="1"
                                 value={seekValue}
                                 onChange={(e) => {
@@ -145,7 +144,6 @@ export default function Player() {
                                 type="range"
                                 min="0"
                                 max="100"
-                                defaultValue={0}
                                 step="1"
                                 value={0}
                                 className={"w-75 audio-range"}
@@ -206,7 +204,7 @@ export default function Player() {
                         </button>
                     </span>
                     <span className={"flex-fill text-white mb-0 last-group"}>
-                        <button className={"mx-3 my-4 border-none"}>
+                        <span className={"mx-3 my-4 border-none"}>
                             <div className="dropup">
                                 <button className="dropbtn">
                                     <i className={"fa fa-volume-up fa-2x text-white"}/>
@@ -226,39 +224,41 @@ export default function Player() {
                                     </p>
                                 </div>
                             </div>
-                        </button>
+                        </span>
                         <a href={track_oss[trackIndex].fileUrl}
                            download={track_oss[index].title}
                            className={"mx-3 my-4 border-none"}>
                             <i className="fa fa-down-to-bracket fa-3x text-white"/>
                         </a>
-                        <button className={"mx-3 my-4 border-none"}>
+                        <span className={"mx-3 my-4 border-none"}>
                             <div className="dropup">
                                 <button className="dropbtn">
                                     <i className="fa-solid fa-share-from-square fa-2x text-white"/>
                                 </button>
                                 <div className="dropup-content share-items mb-4">
-                                    <a href={"/podcasts"} className={"share"} onClick={volumeUp}>
+                                    <a href={"/"} className={"share"} onClick={volumeUp}>
                                         <i className={"fab fa-facebook fa-2x"}/>
                                     </a>
-                                    <a href={"/podcasts"} className={"share"} onClick={volumeDown}>
+                                    <a href={"/"} className={"share"} onClick={volumeDown}>
                                         <i className={"fab fa-twitter fa-2x"}/>
                                     </a>
-                                    <a href={"/podcasts"} className={"share"} onClick={volumeMute}>
+                                    <a href={"/"} className={"share"} onClick={volumeMute}>
                                         <i className={"fab fa-linkedin fa-2x"}/>
                                     </a>
-                                    <a href={"/podcasts"} className={"share"} onClick={volumeMute}>
+                                    <a href={"/"} className={"share"} onClick={volumeMute}>
                                         <i className={"fab fa-whatsapp fa-2x"}/>
                                     </a>
-                                    <a href={"/podcasts"} className={"share"} onClick={volumeMute}>
+                                    <a href={"/"} className={"share"} onClick={volumeMute}>
                                         <i className={"fab fa-github fa-2x"}/>
                                     </a>
                                 </div>
                             </div>
-                        </button>
+                        </span>
                     </span>
                 </div>
             </div>
         </>
     );
 }
+
+

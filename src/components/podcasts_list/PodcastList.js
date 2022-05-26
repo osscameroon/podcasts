@@ -36,7 +36,8 @@ export default function PodcastList({list}) {
                 <div className="container">
                     <div className="row">
                         <div className="col-xs-12 col-sm-8 col-md-8 mx-auto">
-                            {list.map((track) => <PodCastComponent
+                            {list.map((track, i) => <PodCastComponent
+                                    key={i}
                                     track={track}
                                     onClick={function () {
                                         setTrackIndex(Number(track.id) - 1);
@@ -51,3 +52,5 @@ export default function PodcastList({list}) {
         </>
     )
 }
+
+

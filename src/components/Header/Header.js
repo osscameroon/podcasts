@@ -54,13 +54,13 @@ export const Header = () => {
         <>
             <div className="header" style={{
                 backgroundColor: navColor,
-                //height: navSize,
+                height: navSize,
                 transition: "all 1s"
             }}>
                 <nav className="navbar navbar-expand-lg navbar-light">
                     <div className="container-fluid">
                         <div className="header_logo">
-                            <a href="/podcasts">
+                            <a href="/">
                                 <img src={podcast_logo} alt="Podcasts" className="header_logo_image"/>
                             </a>
                         </div>
