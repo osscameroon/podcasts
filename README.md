@@ -5,7 +5,18 @@ This podcast build preview can be [here](https://go-records.me/podcasts), deploy
 
 Initiative of [OssCameroon](https://osscameroon.com/) under the [MIT license](https://opensource.org/licenses/MIT)
 
-Running steps
+## Requirements
+
+- You need to install git-LFS and setup in this project:
+    ```bash
+    sudo apt-get install software-properties-common
+    sudo curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash*
+    sudo apt-get install git-lfs
+    git lfs install
+    ```
+
+## Running steps
+
 - Fork the repo on your personal account
 - Clonning on your local machine
   - `git clone https://github.com/<Your_username>/podcasts`
