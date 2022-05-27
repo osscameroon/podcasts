@@ -4,8 +4,8 @@ import Player from "../Player/Player";
 import AppContext from "../AppContext/AppContext";
 
 
-export const PodCastComponent = ({track, onClick, trunck, setTrackIndex}) => (
-    <li className={true ? 'active trackContainer' : "trackContainer"} onClick={onClick}>
+export const PodCastComponent = ({track, onClick, trunck, trackIndex}) => (
+    <li className={trackIndex === track.id-1 ? 'active trackContainer' : "trackContainer"} onClick={onClick}>
         <div>
             <div className="float-start">
                 <i className="fa fa-microphone-lines fa-2x"/>
@@ -20,7 +20,7 @@ export const PodCastComponent = ({track, onClick, trunck, setTrackIndex}) => (
                         <i className="fa-solid fa-down-to-bracket" aria-hidden="true"/>
                     </a>
                 </div>
-                <p className="track-podcast-name text-black-50">
+                <p className="track-podcast-name text-black-50  d-none d-sm-none d-md-none d-lg-block">
                     {track.podName} {track.date}
                 </p>
             </div>
@@ -29,7 +29,7 @@ export const PodCastComponent = ({track, onClick, trunck, setTrackIndex}) => (
 )
 
 export default function PodcastList({list}) {
-    const {setTrackIndex} = useContext(AppContext);
+    const {trackIndex ,setTrackIndex} = useContext(AppContext);
     const {Truncate} = useContext(AppContext);
     const {isActive} = useContext(AppContext);
     return (
@@ -42,6 +42,8 @@ export default function PodcastList({list}) {
                                     isActive={isActive}
                                     trunck={Truncate(track.title, 21)}
                                     track={track}
+                                    key={track.id}
+                                    trackIndex={trackIndex}
                                     onClick={function () {
                                         setTrackIndex(Number(track.id) - 1);
                                     }}
