@@ -64,13 +64,14 @@ export const Header = () => {
                                 <img src={podcast_logo} alt="Podcasts" className="header_logo_image"/>
                             </a>
                         </div>
-                        <button type="button" className="navbar-toggler" data-bs-toggle="collapse"
+                        <button type="button" className="navbar-toggler float-end" data-bs-toggle="collapse"
                                 data-bs-target="#navbarCollapse">
                             <span>
                                 <i className="fa fa-bars"/>
                             </span>
                         </button>
-                        <div className="collapse navbar-collapse col col-lg-6 col-md-6 mx-auto col-sm-10 mx-auto" id="navbarCollapse">
+                        <div className="collapse navbar-collapse col col-md-6 mx-auto col-sm-10 mx-auto"
+                             id="navbarCollapse">
                             <input
                                 className="no_submit w-100 px-3"
                                 type="search"
@@ -79,9 +80,12 @@ export const Header = () => {
                                 onChange={filter}
                             />
                             <i className="fas fa-search"/>
-                            <span className="fa fa-sort-amount-asc btn d-none d-sm-none d-md-none d-lg-block"
-                                  onClick={sortHandler}/>
                         </div>
+                        <div className="col col-2 d-none d-sm-none d-md-none d-lg-block">
+                            <span className="fa fa-sort-amount-asc btn d-none d-sm-none d-md-none d-lg-block"
+                              onClick={sortHandler}/>
+                        </div>
+                        <div className={"col col-4 d-none d-sm-block d-md-none d-lg-block"}></div>
                     </div>
                 </nav>
             </div>
