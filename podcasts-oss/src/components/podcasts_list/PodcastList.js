@@ -20,7 +20,7 @@ export const PodCastComponent = ({track, onClick, trunck, trackIndex}) => (
                         <i className="fa-solid fa-down-to-bracket" aria-hidden="true"/>
                     </a>
                 </div>
-                <p className="track-podcast-name text-black-50  d-none d-sm-none d-md-none d-lg-block">
+                <p className="track-podcast-name text-black-50 d-none d-sm-none d-md-none d-lg-block">
                     {track.podName} {track.date}
                 </p>
             </div>
@@ -30,7 +30,6 @@ export const PodCastComponent = ({track, onClick, trunck, trackIndex}) => (
 
 export default function PodcastList({list}) {
     const {trackIndex ,setTrackIndex} = useContext(AppContext);
-    const {Truncate} = useContext(AppContext);
     const {isActive} = useContext(AppContext);
     return (
         <>
@@ -40,7 +39,7 @@ export default function PodcastList({list}) {
                         <div className="col-xs-12 col-sm-8 col-md-8 mx-auto">
                             {list.map((track) => <PodCastComponent
                                     isActive={isActive}
-                                    trunck={Truncate(track.title, 21)}
+                                    trunck={track.title}
                                     track={track}
                                     key={track.id}
                                     trackIndex={trackIndex}
