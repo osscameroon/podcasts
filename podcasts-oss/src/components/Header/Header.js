@@ -67,21 +67,20 @@ export const Header = () => {
                         <button type="button" className="navbar-toggler" data-bs-toggle="collapse"
                                 data-bs-target="#navbarCollapse">
                             <span>
-                                <i className="fa fa-search"/>
+                                <i className="fa fa-bars"/>
                             </span>
                         </button>
-                        <div className="collapse navbar-collapse" id="navbarCollapse">
+                        <div className="collapse navbar-collapse col col-lg-6 col-md-6 mx-auto col-sm-10 mx-auto" id="navbarCollapse">
                             <input
-                                className="no_submit w-50 bg-primary px-3 input-sm"
+                                className="no_submit w-100 px-3"
                                 type="search"
                                 value={title}
                                 placeholder="Search podcasts..."
                                 onChange={filter}
                             />
-                            <span className="fa fa-sort-amount-asc sort btn"
-                                  onClick={sortHandler}
-                            >
-                                    </span>
+                            <i className="fas fa-search"/>
+                            <span className="fa fa-sort-amount-asc btn d-none d-sm-none d-md-none d-lg-block"
+                                  onClick={sortHandler}/>
                         </div>
                     </div>
                 </nav>

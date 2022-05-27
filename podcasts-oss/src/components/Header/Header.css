@@ -7,9 +7,7 @@
 }
 
 .sort {
-    position: fixed;
     font-size: 16px;
-    margin: 0 !important;
     padding: 0;
     opacity: 1;
 }
@@ -28,7 +26,6 @@
             #6c53ff,
             #5b4bb6,
             #363280
-
     ) no-repeat;
 }
 
@@ -36,50 +33,22 @@
 /* Search form CSS */
 
 /********* Beginning CSS ************/
-form {
-    color: #555;
-    border: 1px solid currentColor;
-    border-radius: 10px;
-    background: #0C344B 0 0 no-repeat padding-box;
-}
-
-.no_submit {
-    margin-left: 5.5rem;
-    padding: 0!important;
-}
 input[type="search"] {
-    background: #0C344B;
     color: #E4E4E4;
     border: 1px solid transparent;
-    border-radius: inherit;
+    border-radius: 10px;
+    background: #0C344B 0 0 no-repeat padding-box !important;
+    height: 40px !important;
 }
 
 input[type="search"]::placeholder {
     color: #bbb;
 }
 
-button[type="submit"]:hover {
-    opacity: 1;
-}
-
-button[type="submit"]:focus,
 input[type="search"]:focus {
     box-shadow: 0 0 3px 0 #1183d6;
-    background: none;
+    z-index: 1;
     border-color: #1183d6;
     outline: none;
-}
-
-form.no_submit {
-    border: none;
-    padding: 0;
-}
-
-input.no_submit {
-    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'\
-     width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath \
-     d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0\
-      0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 \
-      0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat -1px;
 }
 /******** End CSS ********/
