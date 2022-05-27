@@ -36,6 +36,21 @@ body {
     i.fas.fa-search {
         margin: 0 5px 0 -31px !important;
     }
+
+    .player {
+        position: -webkit-sticky;
+        position: fixed;
+        bottom: -2px;
+        background-color: #0C344B;
+        height: 200px;
+        z-index: 1020;
+        width: 100%;
+    }
+
+    .w-85 {
+        width: 85%;
+    }
+
 }
 
 @media (min-width: 100px) and (max-width: 983px) {
@@ -75,5 +90,18 @@ body {
     .header {
         position: sticky;
         width: 100%;
+    }
+    .player {
+        position: -webkit-sticky;
+        position: fixed;
+        bottom: -5px;
+        background-color: #0C344B;
+        height: 150px;
+        z-index: 1020;
+        width: 100%;
+    }
+
+    .track-time{
+        font-size: 8px !important;
     }
 }
