@@ -2,13 +2,15 @@ import React, {useContext} from "react";
 import './PodcastList.css'
 import Player from "../Player/Player";
 import AppContext from "../AppContext/AppContext";
+import { faMicrophoneLines } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 export const PodCastComponent = ({track, onClick}) => (
     <li className={"trackContainer " + track.active} onClick={onClick}>
         <div>
             <div className="float-start">
-                <i className="fa fa-microphone-lines fa-2x"/>
+                <FontAwesomeIcon icon={faMicrophoneLines} style={{fontSize: "3.3em"}} />
             </div>
             <div className="">
                 <span className="track-title">
