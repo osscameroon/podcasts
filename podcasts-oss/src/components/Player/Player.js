@@ -2,6 +2,7 @@ import React, {useContext, useRef, useState} from "react";
 import './Player.css';
 import {track_oss} from "../../tracks/tracks";
 import AppContext from "../AppContext/AppContext";
+// import music from "../../assets/1a.mp3"
 
 export default function Player() {
     const audioPlayer = useRef(0);
@@ -148,18 +149,19 @@ export default function Player() {
                                 className={"w-75 audio-range"}
                                 align={"center"}
                             />}
-                    <p className={"text-white mx-5 h4"}>
+                    <p className={"float-start text-white mx-5 h4"}>
                         {isNew()}
                     </p>
                 </div>
                 <audio
                     src={track_oss[trackIndex].fileUrl}
+                    // src={music}
                     ref={audioPlayer}
                     onTimeUpdate={onPlaying}
                 >
                 </audio>
                 <div className="w-100 d-flex">
-                    <div className={"flex-fill fixed"}>
+                    <div className={"flex-fill fixed d-none d-sm-none d-md-none d-lg-block"}>
                         <span>
                             <i className="fa fa-microphone-lines
                             text-blue fa-5x mt-4 m-3 mb-4"/>
@@ -203,7 +205,7 @@ export default function Player() {
                         </button>
                     </span>
                     <span className={"flex-fill text-white mb-0 last-group"}>
-                        <button className={"mx-3 my-4 border-none"}>
+                        <button className={"mx-3 my-4 border-none d-none d-sm-none d-md-none d-lg-inline"}>
                             <div className="dropup">
                                 <button className="dropbtn">
                                     <i className={"fa fa-volume-up fa-2x text-white"}/>
