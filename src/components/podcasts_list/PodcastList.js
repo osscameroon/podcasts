@@ -2,13 +2,15 @@ import React, {useContext} from "react";
 import './PodcastList.css'
 import Player from "../Player/Player";
 import AppContext from "../AppContext/AppContext";
+import { faMicrophoneLines } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 export const PodCastComponent = ({track, onClick}) => (
     <li className={"trackContainer " + track.active} onClick={onClick}>
         <div>
             <div className="float-start">
-                <i className="fa fa-microphone-lines fa-2x"/>
+                <FontAwesomeIcon icon={faMicrophoneLines} style={{fontSize: "3.3em"}} />
             </div>
             <div className="">
                 <span className="track-title">
@@ -36,7 +38,8 @@ export default function PodcastList({list}) {
                 <div className="container">
                     <div className="row">
                         <div className="col-xs-12 col-sm-8 col-md-8 mx-auto">
-                            {list.map((track) => <PodCastComponent
+                            {list.map((track, i) => <PodCastComponent
+                                    key={i}
                                     track={track}
                                     onClick={function () {
                                         setTrackIndex(Number(track.id) - 1);
@@ -51,3 +54,5 @@ export default function PodcastList({list}) {
         </>
     )
 }
+
+
