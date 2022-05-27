@@ -18,8 +18,14 @@ function App() {
     const [trackIndex, setTrackIndex] = useState(0);
     const [isActive, setActive] = useState(false);
     const Truncate = (str, val) => {
-        return str.length > 20 ? str.substring(0, val) + "..." : str;
+        return str.length > 25 ? str.substring(0, val) + "..." : str;
     }
+/*    const win = window,
+        doc = document,
+        docElem = doc.documentElement,
+        body = doc.getElementsByTagName('body')[0],
+        x = win.innerWidth || docElem.clientWidth || body.clientWidth;
+    alert(x);*/
     return (
         <div className="App">
             <AppContext.Provider
