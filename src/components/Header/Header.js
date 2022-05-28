@@ -4,7 +4,13 @@ import podcast_logo from '../../assets/podcast_logo.png';
 import {track_oss} from '../../tracks/tracks';
 import PodcastList from '../podcasts_list/PodcastList';
 import AppContext from "../AppContext/AppContext";
-
+import {
+    faSearch,
+    faBars,
+    faSortAmountAsc,
+    faClose
+} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 export const Header = () => {
 
@@ -26,7 +32,7 @@ export const Header = () => {
         }
         setTitle(keyword);
     };
-   //sort function
+    //sort function
     const sortHandler = () => {
 
         const sortedItems = track_oss.map((t) => {
@@ -37,11 +43,12 @@ export const Header = () => {
         });
         setPodcastItems(sortedItems);
     }
-    const [navSize, satnavSize] = useState("10rem");
-    const [navColor, satnavColor] = useState("transparent");
+    const [navSize, setNavSize] = useState("6rem");
+    const [navColor, setNavColor] = useState("transparent");
+    const [swapClass, setSwapClass] = useState(true);
     const listenScrollEvent = () => {
-        window.scrollY > 10 ? satnavColor("rgb(119,96,248)") : satnavColor("transparent");
-        window.scrollY > 10 ? satnavSize("10rem") : satnavSize("10rem");
+        window.scrollY > 10 ? setNavColor("rgb(119,96,248)") : setNavColor("transparent");
+        window.scrollY > 10 ? setNavSize("6rem") : setNavSize("6rem");
     };
     useEffect(() => {
         window.addEventListener("scroll", listenScrollEvent);
@@ -64,31 +71,35 @@ export const Header = () => {
                                 <img src={podcast_logo} alt="Podcasts" className="header_logo_image"/>
                             </a>
                         </div>
-                        <button type="button" className="navbar-toggler" data-bs-toggle="collapse"
+                        <button type="button" className="navbar-toggler float-end" data-bs-toggle="collapse"
                                 data-bs-target="#navbarCollapse">
-                            <span>
-                                <i className="fa fa-search"/>
+                            <span style={{
+                                transition: "all 1s"
+                            }}
+                                onClick={function () {
+                                setSwapClass(!swapClass)}}>
+                                <FontAwesomeIcon icon={swapClass ? faBars : faClose}/>
+
                             </span>
                         </button>
-                        <div className="collapse navbar-collapse" id="navbarCollapse">
-                            <div className="navbar-nav">
-                                <div>
-                                    <form className="no_submit ">
-                                        <input
-                                            className="no_submit col-xs-4 px-3 input-sm"
-                                            type="search"
-                                            value={title}
-                                            placeholder="Search podcasts..."
-                                            onChange={filter}
-                                        />
-                                        <span className="fa fa-sort-amount-asc sort btn"
-                                            onClick={sortHandler}
-                                        >
-                                    </span>
-                                    </form>
-                                </div>
-                            </div>
+                        <div className="collapse navbar-collapse col col-md-6 mx-auto col-sm-10 mx-auto"
+                             id="navbarCollapse">
+                            <input
+                                className="w-100 px-3"
+                                type="search"
+                                value={title}
+                                placeholder="Search podcasts..."
+                                onChange={filter}
+                            />
+                            <FontAwesomeIcon icon={faSearch} viewBox={"900 0 512 512"}/>
                         </div>
+                        <div className="col col-2 d-none d-sm-none d-md-none d-lg-block">
+                            <span className=" btn d-none d-sm-none d-md-none d-lg-block"
+                                  onClick={sortHandler}>
+                                <FontAwesomeIcon icon={faSortAmountAsc}/>
+                            </span>
+                        </div>
+                        <div className={"col col-4 d-none d-sm-none d-md-none d-lg-block"}></div>
                     </div>
                 </nav>
             </div>
