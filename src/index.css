@@ -13,10 +13,10 @@ body {
     -webkit-background: linear-gradient(to bottom, #6c53ff, #363280) no-repeat cover;
     -moz-background: linear-gradient(to bottom, #6c53ff, #363280) no-repeat cover;
     -o-background: linear-gradient(to bottom, #6c53ff, #363280) no-repeat cover center;
-    background: url("./assets/human_with_phone.png") no-repeat bottom right  -30px,
-    url("./assets/earphone.png") no-repeat top right -62.875244140625px fixed,
+    background: url("./assets/human_with_phone.png") no-repeat bottom 97px right -50px,
+    url("./assets/earphone.png") no-repeat top -30px right -44px fixed,
     linear-gradient(to bottom, #6c53ff, #363280) no-repeat;
-    background-size: 309px, 299px, cover;
+    background-size: 480px, 199px, cover;
     background-attachment: fixed;
 }
 
@@ -25,50 +25,78 @@ body {
         margin-left: 120px;
     }
 
-    input {
-        margin-left: 5630px;
+    .track-title {
+        font-size: 20px;
     }
+
+    .header_logo {
+        margin-right: 190px
+    }
+
+    i.fas.fa-search {
+        margin: 0 5px 0 -31px !important;
+    }
+
+    .player {
+        position: -webkit-sticky;
+        position: fixed;
+        bottom: -2px;
+        background-color: #0C344B;
+        height: 200px;
+        z-index: 1020;
+        width: 100%;
+    }
+
+    .w-85 {
+        width: 85%;
+    }
+
 }
 
-@media (min-width: 100px) and (max-width: 983px){
+@media (min-width: 100px) and (max-width: 983px) {
     body {
         background-size: 250px, 200px, cover;
     }
 
-    .sort {
-        margin-top: 12px;
-        position: sticky;
+    i.fas.fa-search {
+        margin: 0 5px 0 -25px !important;
     }
 
-    input {
-        width: 100%;
-    }
-    .track-title{
-        font-size: 20px !important;
-    }
-
-    .trackContainer.active{
+    .trackContainer.active {
         border-left: #0C344B solid 5px;
         background-color: #74C5F3;
     }
 
-    .trackContainer>* {
+    .trackContainer > * {
         padding: 25px;
     }
 
-    .fa-down-to-bracket{
+    .fa-down-to-bracket {
     }
 
-    .track-title{
+    .track-title {
         font-family: GoogleSans, sans-serif bold;
     }
 
-    .track-podcast-name{
+    .track-podcast-name {
 
     }
 
-    .header{
+    .header {
         position: sticky;
         width: 100%;
+    }
+    .player {
+        position: -webkit-sticky;
+        position: fixed;
+        bottom: -5px;
+        background-color: #0C344B;
+        height: 150px;
+        z-index: 1020;
+        width: 100%;
+    }
+
+    .track-time{
+        font-size: 8px !important;
     }
 }
