@@ -1,13 +1,3 @@
-.player {
-    position: -webkit-sticky;
-    position: fixed;
-    bottom: 0;
-    background-color: #0C344B;
-    height: 180px;
-    z-index: 1020;
-    width: 100%;
-}
-
 input[type="range"] {
     -webkit-appearance: none !important;
     margin: 0;
@@ -28,10 +18,6 @@ input[type="range"]::-webkit-slider-thumb {
     width: 6px;
     border-radius: 50%;
     box-shadow: -100vw 0 0 100vw #40ACF4;
-}
-
-.w-85 {
-    width: 85%;
 }
 
 .round-button {
