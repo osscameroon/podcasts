@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './fonts/GoogleSans-Bold-v1.27.ttf';
 import './fonts/GoogleSans-Medium-v1.27.ttf';
 import './fonts/GoogleSans-Regular-v1.27.ttf';
+import 'bootstrap/dist/js/bootstrap.js';
 import {Button} from './components/Button/Button';
 import AppContext from "./components/AppContext/AppContext";
 import {track_oss} from "./tracks/tracks";
@@ -27,7 +28,6 @@ function App() {
                 }}>
                 <Header/>
                 <Button/>
-
             </AppContext.Provider>
         </div>
 
