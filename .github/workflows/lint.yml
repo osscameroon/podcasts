@@ -13,14 +13,14 @@ jobs:
   lint:
     runs-on: ubuntu-latest
 
-    name: Lint on node 17. and ubuntu-latest
+    name: Lint on node 17.x and ubuntu-latest
 
     steps:
       - uses: actions/checkout@v1
       - name: Use Node.js 17x
         uses: actions/setup-node@v1
         with:
-          node-version: 17x
+          node-version: 17.x
 
       - name: Install deps and build (with cache)
         uses: bahmutov/npm-install@v1.7.10
