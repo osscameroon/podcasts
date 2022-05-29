@@ -1,4 +1,4 @@
-ame: Lint / Flow check
+name: Lint / Flow check
 
 on:
   push:
