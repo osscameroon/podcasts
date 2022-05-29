@@ -1,0 +1,29 @@
+ame: Lint / Flow check
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - master
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    name: Lint on node 17. and ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js 17x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 17x
+
+      - name: Install deps and build (with cache)
+        uses: bahmutov/npm-install@v1.7.10
+
+      - name: Lint codebase
+        run: yarn ci-check
