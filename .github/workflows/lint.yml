@@ -26,4 +26,4 @@ jobs:
         uses: bahmutov/npm-install@v1.7.10
 
       - name: Lint codebase
-        run: yarn ci-check
+        run: yarn build
