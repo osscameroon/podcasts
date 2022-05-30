@@ -11,7 +11,8 @@ import {
     faForwardStep,
     faPlay,
     faBackwardStep,
-    faPause
+    faPause,
+    faMicrophoneLines,
 } from "@fortawesome/free-solid-svg-icons";
 import {
     faFacebook,
@@ -21,7 +22,6 @@ import {
     faGithub
 } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 export default function Player() {
     const audioPlayer = useRef(0);
     const {currentTime, setCurrentTime} = useContext(AppContext);
@@ -179,13 +179,13 @@ export default function Player() {
                 >
                 </audio>
                 <div className="w-100 d-flex">
-                    <div className={"flex-fill fixed"}>
+                    <div className={"flex-fill fixed d-none d-sm-none d-md-none d-lg-block"}>
                         <span>
-                            <i className="fa fa-microphone-lines
-                            text-blue fa-5x mt-4 m-3 mb-4"/>
+                            <FontAwesomeIcon icon={faMicrophoneLines}
+                                             /*className={"text-blue fa-5x mt-4 m-3 mb-4"}*//>
                         </span>
                         <span className={"text-white display-none h5"}
-                                style={{position: "absolute", bottom: "1.2em", left: "4.9%"}}>
+                              style={{position: "absolute", bottom: "1.2em", left: "4.9%"}}>
                                 {track_oss[trackIndex].id} -
                             {Truncate((track_oss[trackIndex].title), 20)}
                         </span>
@@ -199,7 +199,7 @@ export default function Player() {
                         <button className="round-button-none
                          gradient-border-none px-2 mx-2"
                                 onClick={toPrevTrack} onDoubleClick={null}>
-                            <FontAwesomeIcon icon={faBackwardStep} style={{fontSize: "1.5em"}} />
+                            <FontAwesomeIcon icon={faBackwardStep} style={{fontSize: "1.5em"}}/>
                         </button>
                         {
                             !isNaN(audioPlayer.current.duration) ?
@@ -207,8 +207,8 @@ export default function Player() {
                                         className="round-button
                                 round-button_small gradient-border">
                                     <FontAwesomeIcon
-                                        icon={isActive ? faPause: faPlay}
-                                        style={{marginBottom: "3px", marginLeft: "3px", fontSize: "1.5em" }} />
+                                        icon={isActive ? faPause : faPlay}
+                                        style={{marginBottom: "3px", marginLeft: "3px", fontSize: "1.5em"}}/>
                                 </button> :
                                 <button onClick={playPause}
                                         onDoubleClick={stopOrPlay}
@@ -216,32 +216,32 @@ export default function Player() {
                                         gradient-border">
                                     <FontAwesomeIcon
                                         icon={faPlay}
-                                        style={{marginBottom: "3px", marginLeft: "3px", fontSize: "1.5em" }} />
+                                        style={{marginBottom: "3px", marginLeft: "3px", fontSize: "1.5em"}}/>
                                 </button>
                         }
                         <button className="round-button-none gradient-border-none px-2 mx-2"
                                 onClick={toNextTrack} onDoubleClick={null}>
-                            <FontAwesomeIcon icon={faForwardStep} style={{fontSize: "1.5em"}} />
+                            <FontAwesomeIcon icon={faForwardStep} style={{fontSize: "1.5em"}}/>
                         </button>
                     </span>
                     <span className={"flex-fill text-white mb-0 last-group"}>
-                        <span className={"mx-3 my-4 border-none"}>
+                        <span className={"mx-3 my-4 border-none d-none d-sm-none d-md-none d-lg-inline"}>
                             <div className="dropup">
                                 <button className="dropbtn">
-                                    <FontAwesomeIcon icon={faVolumeUp} style={{fontSize: "2em"}} />
+                                    <FontAwesomeIcon icon={faVolumeUp} style={{fontSize: "2em"}}/>
                                 </button>
                                 <div className="dropup-content mb-4">
-                                    <span className={"volume-tip float start"}>
+                                    <span className={"volume-tip float-start"}>
                                         {Math.round(volume * 100)}
                                     </span>
                                     <p className={"vol volume-up mt-3"} onClick={volumeUp}>
-                                        <FontAwesomeIcon icon={faVolumeUp} style={{fontSize: "1.5em"}} />
+                                        <FontAwesomeIcon icon={faVolumeUp} style={{fontSize: "1.5em"}}/>
                                     </p>
                                     <p className={"vol volume-down mt-3"} onClick={volumeDown}>
-                                        <FontAwesomeIcon icon={faVolumeDown} style={{fontSize: "1.5em"}} />
+                                        <FontAwesomeIcon icon={faVolumeDown} style={{fontSize: "1.5em"}}/>
                                     </p>
                                     <p className={"vol volume-down mt-3"} onClick={volumeMute}>
-                                        <FontAwesomeIcon icon={faVolumeMute} style={{fontSize: "1.5em"}} />
+                                        <FontAwesomeIcon icon={faVolumeMute} style={{fontSize: "1.5em"}}/>
                                     </p>
                                 </div>
                             </div>
@@ -249,28 +249,28 @@ export default function Player() {
                         <a href={track_oss[trackIndex].fileUrl}
                            download={track_oss[index].title}
                            className={"mx-3 my-4 border-none"}>
-                            <FontAwesomeIcon icon={faDownload} style={{color: "white", fontSize: "2em"}} />
+                            <FontAwesomeIcon icon={faDownload} style={{color: "white", fontSize: "2em"}}/>
                         </a>
                         <span className={"mx-3 my-4 border-none"}>
                             <div className="dropup">
                                 <button className="dropbtn">
-                                    <FontAwesomeIcon icon={faShareFromSquare} style={{fontSize: "2em"}} />
+                                    <FontAwesomeIcon icon={faShareFromSquare} style={{fontSize: "2em"}}/>
                                 </button>
                                 <div className="dropup-content share-items mb-4">
-                                    <a href={"/"} className={"share"} onClick={volumeUp}>
-                                        <FontAwesomeIcon icon={faFacebook} style={{fontSize: "1.5em"}} />
+                                    <a href={"/"} className={"share"}>
+                                        <FontAwesomeIcon icon={faFacebook} style={{fontSize: "1.5em"}}/>
                                     </a>
-                                    <a href={"/"} className={"share"} onClick={volumeDown}>
-                                        <FontAwesomeIcon icon={faTwitter} style={{fontSize: "1.5em"}} />
+                                    <a href={"/"} className={"share"}>
+                                        <FontAwesomeIcon icon={faTwitter} style={{fontSize: "1.5em"}}/>
                                     </a>
-                                    <a href={"/"} className={"share"} onClick={volumeMute}>
-                                        <FontAwesomeIcon icon={faLinkedin} style={{fontSize: "1.5em"}} />
+                                    <a href={"/"} className={"share"}>
+                                        <FontAwesomeIcon icon={faLinkedin} style={{fontSize: "1.5em"}}/>
                                     </a>
-                                    <a href={"/"} className={"share"} onClick={volumeMute}>
-                                        <FontAwesomeIcon icon={faWhatsapp} style={{fontSize: "1.5em"}} />
+                                    <a href={"/"} className={"share"}>
+                                        <FontAwesomeIcon icon={faWhatsapp} style={{fontSize: "1.5em"}}/>
                                     </a>
-                                    <a href={"/"} className={"share"} onClick={volumeMute}>
-                                        <FontAwesomeIcon icon={faGithub} style={{fontSize: "1.5em"}} />
+                                    <a href={"/"} className={"share"}>
+                                        <FontAwesomeIcon icon={faGithub} style={{fontSize: "1.5em"}}/>
                                     </a>
                                 </div>
                             </div>

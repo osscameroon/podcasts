@@ -27,7 +27,6 @@ function App() {
                 }}>
                 <Header/>
                 <Button/>
-
             </AppContext.Provider>
         </div>
 
