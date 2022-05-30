@@ -1,6 +1,6 @@
 li{
     background-color: #B6DEF5;
-    margin: 10px 0 10px 0;
+    margin: 10px 0 10px 80px;
    
 }
 li:active{
@@ -21,7 +21,8 @@ li{
 } */
 
 .trackContainer{
-    height: 7rem;
+    height: 6rem;
+    width:100%;
 }
 
 .trackContainer.active{
@@ -56,4 +57,11 @@ li{
 
 .track-podcast-name{
 
+}
+#telegram{
+    width: 45%;
+    size: 40px;
+}
+#Logname{
+    font-size: larger;
 }
