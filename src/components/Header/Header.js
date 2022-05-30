@@ -4,6 +4,8 @@ import podcast_logo from '../../assets/podcast_logo.png';
 import {track_oss} from '../../tracks/tracks';
 import PodcastList from '../podcasts_list/PodcastList';
 import AppContext from "../AppContext/AppContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSortAmountDownAlt } from '@fortawesome/free-solid-svg-icons';
 
 
 export const Header = () => {
@@ -37,11 +39,11 @@ export const Header = () => {
         });
         setPodcastItems(sortedItems);
     }
-    const [navSize, satnavSize] = useState("10rem");
+    const [navSize, satnavSize] = useState("5rem");
     const [navColor, satnavColor] = useState("transparent");
     const listenScrollEvent = () => {
         window.scrollY > 10 ? satnavColor("rgb(119,96,248)") : satnavColor("transparent");
-        window.scrollY > 10 ? satnavSize("10rem") : satnavSize("10rem");
+        window.scrollY > 10 ? satnavSize("5rem") : satnavSize("5rem");
     };
     useEffect(() => {
         window.addEventListener("scroll", listenScrollEvent);
@@ -81,9 +83,10 @@ export const Header = () => {
                                             placeholder="Search podcasts..."
                                             onChange={filter}
                                         />
-                                        <span className="fa fa-sort-amount-asc sort btn"
+                                        <span className="sort"
                                             onClick={sortHandler}
                                         >
+                                        <FontAwesomeIcon icon={faSortAmountDownAlt} />
                                     </span>
                                     </form>
                                 </div>
