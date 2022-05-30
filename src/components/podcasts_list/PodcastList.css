@@ -1,6 +1,6 @@
 li{
     background-color: #B6DEF5;
-    margin: 10px 0 10px 0;
+    margin: 10px 0 10px 80px;
    
 }
 li:active{
@@ -21,7 +21,7 @@ li{
 } */
 
 .trackContainer{
-    height: 7rem;
+    height: 6rem;
 }
 
 .trackContainer.active{
@@ -40,20 +40,24 @@ li{
     column-count: 1;
     column-gap: 20px;
 }
-#download{
-    padding-bottom: 20px;
-}
+/* #download{
+    padding-bottom: 10px;
+} */
 .track-title{
     font-weight: bold;
     font-size: 20px;
-    padding: 15px 0px 2px 0px;
+    padding: 16px 0px 2px 0px;
     font-family: GoogleSans, sans-serif bold;
     margin-left:3rem;
 }
 .track-podcast-name{
-    margin-left:3rem;
+    margin-left:8rem;
 }
 
-.track-podcast-name{
-
+#telegram{
+    width: 45%;
+    size: 40px;
+}
+#Logname{
+    font-size: larger;
 }
