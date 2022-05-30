@@ -22,7 +22,6 @@ li{
 
 .trackContainer{
     height: 6rem;
-    width:100%;
 }
 
 .trackContainer.active{
@@ -42,22 +41,19 @@ li{
     column-gap: 20px;
 }
 /* #download{
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 } */
 .track-title{
     font-weight: bold;
     font-size: 20px;
-    padding: 15px 0px 2px 0px;
+    padding: 16px 0px 2px 0px;
     font-family: GoogleSans, sans-serif bold;
     margin-left:3rem;
 }
 .track-podcast-name{
-    margin-left:3rem;
+    margin-left:8rem;
 }
 
-.track-podcast-name{
-
-}
 #telegram{
     width: 45%;
     size: 40px;
