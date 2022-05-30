@@ -1,6 +1,7 @@
 @font-face {
     font-family: "GoogleSansBold";
-    src: url("./fonts/GoogleSans-Bold-v1.27.ttf");
+    src: url("./fonts/GoogleSans-Bold-v1.27.ttf")format('ttf'),
+    url("./fonts/GoogleSans-Medium-v1.27.ttf")format('ttf');
 }
 
 html {
@@ -28,6 +29,24 @@ body {
     input {
         margin-left: 5630px;
     }
+    .side-bar{
+        position: fixed; 
+        z-index: 1;
+        margin: 0 !important;
+        padding:0 !important;
+        flex-direction: column-reverse;
+    }
+}
+#content{
+    padding-top: 40px;
+    margin-right: 80px;
+    color: rgb(243, 237, 237);
+    font-size: 20px;
+    word-spacing: 0px;
+}
+#line{
+    width: 45%;
+    border: 3px solid #74C5F3;
 }
 
 @media (min-width: 100px) and (max-width: 983px){
@@ -71,4 +90,10 @@ body {
         position: sticky;
         width: 100%;
     }
+}
+.row{
+    margin:0 !important 
+}
+.container{
+    margin: 0 !important;
 }
