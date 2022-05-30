@@ -41,9 +41,9 @@ li{
     column-count: 1;
     column-gap: 20px;
 }
-#download{
+/* #download{
     padding-bottom: 20px;
-}
+} */
 .track-title{
     font-weight: bold;
     font-size: 20px;
