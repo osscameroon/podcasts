@@ -22,10 +22,10 @@ export const PodCastComponent = ({track, onClick, trunk, trackIndex}) => (
                 <p className="track-podcast-name text-black-50 d-none d-sm-none d-md-none d-lg-block">
                     {track.podName} {track.date}
                 </p>
-                <div className="float-end" id="download">
+                <div className="float-end" >
                     <a href={track.fileUrl} className="border-light bg-transparent text-dark"
                        type="download">
-                        <FontAwesomeIcon icon={faDownload} style={{color: "dark", fontSize: "1em", paddingBottom: "20px"}} />
+                        <FontAwesomeIcon icon={faDownload} style={{color: "dark", fontSize: "1em",}} />
                     </a>
                 </div>
             </div>
