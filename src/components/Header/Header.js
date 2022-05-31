@@ -65,7 +65,7 @@ export const Header = () => {
                 transition: "all 1s"
             }}>
                 <nav className="navbar navbar-expand-lg navbar-light">
-                    <div className="container-fluid">
+                    <div className="container-fluid" style={{padding:'6px'}}>
                         <div className="header_logo">
                             <a href="/">
                                 <img src={podcast_logo} alt="Podcasts" className="header_logo_image"/>
@@ -82,10 +82,10 @@ export const Header = () => {
 
                             </span>
                         </button>
-                        <div className="collapse navbar-collapse col col-md-6 mx-auto col-sm-10 mx-auto"
+                        <div className="collapse navbar-collapse col col-md-6  col-sm-10 "
                              id="navbarCollapse">
-                            <input
-                                className="w-100 px-3"
+                            <input id='search'
+                                className="w-75  px-3"
                                 type="search"
                                 value={title}
                                 placeholder="Search podcasts..."
@@ -93,10 +93,10 @@ export const Header = () => {
                             />
                             <FontAwesomeIcon icon={faSearch} viewBox={"900 0 512 512"}/>
                         </div>
-                        <div className="col col-2 d-none d-sm-none d-md-none d-lg-block">
+                        <div className=" d-none d-sm-none d-md-none d-lg-block">
                             <span className=" btn d-none d-sm-none d-md-none d-lg-block"
                                   onClick={sortHandler}>
-                                <FontAwesomeIcon icon={faSortAmountAsc}/>
+                                <FontAwesomeIcon icon={faSortAmountAsc} style={{margin:'0px'}}/>
                             </span>
                         </div>
                         <div className={"col col-4 d-none d-sm-none d-md-none d-lg-block"}></div>
