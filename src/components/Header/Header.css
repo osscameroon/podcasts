@@ -4,11 +4,12 @@
 
 .header_logo {
     float: left;
+    margin-right: 150px;
 }
 
 .sort {
     font-size: 16px;
-    padding-right: 50%;
+    padding-left: 50%;
     opacity: 1;
 }
 
