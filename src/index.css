@@ -62,9 +62,9 @@ body {
     .player {
         position: -webkit-sticky;
         position: fixed;
-        bottom: -2px;
+        bottom: -33px;
         background-color: #0C344B;
-        height: 200px;
+        height: 157px;
         z-index: 1020;
         width: 100%;
     }
