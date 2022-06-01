@@ -82,7 +82,7 @@ export const Header = () => {
 
                             </span>
                         </button>
-                        <div className="collapse navbar-collapse col col-md-6  col-sm-10 "
+                        <div className="collapse navbar-collapse col-lg-3 col-md-6  col-sm-10" style={{padding:'0px'}}
                              id="navbarCollapse">
                             <input id='search'
                                 className="w-75  px-3"
@@ -94,12 +94,12 @@ export const Header = () => {
                             <FontAwesomeIcon icon={faSearch} viewBox={"900 0 512 512"}/>
                         </div>
                         <div className=" d-none d-sm-none d-md-none d-lg-block">
-                            <span className=" btn d-none d-sm-none d-md-none d-lg-block"
+                            <span className=" "
                                   onClick={sortHandler}>
-                                <FontAwesomeIcon icon={faSortAmountAsc} style={{margin:'0px'}}/>
+                                <FontAwesomeIcon icon={faSortAmountAsc} style={{paddingRight:'120px'}}/>
                             </span>
                         </div>
-                        <div className={"col col-4 d-none d-sm-none d-md-none d-lg-block"}></div>
+                        <div className={"col d-none d-sm-none d-md-none d-lg-block"}></div>
                     </div>
                 </nav>
             </div>
