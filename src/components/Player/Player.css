@@ -175,3 +175,14 @@ input[type="range"]::-webkit-slider-thumb {
     border-bottom: 1px solid #0C344B;
     height: auto;
 }
+.flex-fill{
+    flex: 1 1 auto !important;
+    margin-top:-20px;
+}
+.text-white{
+    font-size: x-small;
+}
+.h5, h5{
+    top:90px;
+    font-size: 5px;
+}
