@@ -139,8 +139,8 @@ export default function Player() {
     return (
         <>
             <div className="mt-4 player">
-                <div className={"d-flex justify-content-center mt-5"}>
-                    <p className={"text-white mx-5 h4 fixed"}>
+                <div className={"d-flex justify-content-center mt-4"}>
+                    <p className={"text-white mx-3 h4 fixed"}>
                         {weEnd()}
                     </p>
                     {
