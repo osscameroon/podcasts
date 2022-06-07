@@ -5,7 +5,7 @@ import AppContext from "../AppContext/AppContext";
 import { faMicrophoneLines } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
-import { FaTelegramPlane } from 'react-icons/fa';
+import { faTelegramPlane } from "@fortawesome/free-brands-svg-icons";
 
 export const PodCastComponent = ({track, onClick, trunk, trackIndex}) => (
     <li className={trackIndex === track.id - 1 ?
@@ -47,7 +47,7 @@ export default function PodcastList({list}) {
                                 <hr id="line"/>
                                 <span>
                                <a href="https://t.me/+O7SQfusW8XVmOTFi" className="fa-5x">
-                               <FaTelegramPlane/>
+                               <FontAwesomeIcon icon={faTelegramPlane} style={{color: "dark", fontSize: "1em",paddingTop:'20px'}} />
                               </a> 
                             </span>
                             </span>
