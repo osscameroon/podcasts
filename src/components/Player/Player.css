@@ -183,6 +183,7 @@ input[type="range"]::-webkit-slider-thumb {
     font-size: x-small;
 }
 .h5, h5{
-    top:90px;
+    top:100px;
+    margin-left: 30px;
     font-size: 5px;
 }
