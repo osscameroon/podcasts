@@ -139,7 +139,7 @@ export default function Player() {
     return (
         <>
             <div className="mt-4 player">
-                <div className={"d-flex justify-content-center mt-5"}>
+                <div className={"d-flex justify-content-center mt-4"}>
                     <p className={"text-white mx-5 h4 fixed"}>
                         {weEnd()}
                     </p>
@@ -180,8 +180,8 @@ export default function Player() {
                 </audio>
                 <div className="w-100 d-flex">
                     <div className={"flex-fill fixed d-none d-sm-none d-md-none d-lg-block"}>
-                        <span>
-                            <FontAwesomeIcon icon={faMicrophoneLines}
+                        <span className="mx-2 text-white">
+                            <FontAwesomeIcon icon={faMicrophoneLines}  style={{fontSize: "3.3em"}}
                                              /*className={"text-blue fa-5x mt-4 m-3 mb-4"}*//>
                         </span>
                         <span className={"text-white display-none h5"}
@@ -190,7 +190,7 @@ export default function Player() {
                             {Truncate((track_oss[trackIndex].title), 20)}
                         </span>
                         <span className={"text-light h5 mb-0 " +
-                            "display-none row mx-3 align-center"}>
+                            "display-none row mx-5 align-center"}>
                                 {track_oss[trackIndex].podName}
                         </span>
                     </div>

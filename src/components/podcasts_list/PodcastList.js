@@ -41,17 +41,17 @@ export default function PodcastList({list}) {
             <ul>
                 <div className="container">
                     <div className="row">
-                    <div className="side-bar col-3 col-md-3">
-                            <span className="">
+                    <div className="side-bar col-lg-3 col-md-3 col-sm-6 d-none d-sm-none d-md-none d-lg-block">
+                            <span className="hidden-md">
                                 <p id="content">In just a click on the plane below, Join the <span id="Logname">OSS Community</span> <br/> now!</p>
                                 <hr id="line"/>
                                 <span>
                                <a href="https://t.me/+O7SQfusW8XVmOTFi" className="fa-5x">
-                               <FontAwesomeIcon icon={faTelegramPlane} style={{fontSize: "1em"}} id="telegram"/>
+                               <FontAwesomeIcon icon={faTelegramPlane} style={{color: "dark", fontSize: "1em",paddingTop:'20px'}} />
                               </a> 
                             </span>
                             </span>
-                        </div>
+                    </div>
                         <div className="col-xs-12 col-sm-8 col-md-8 mx-auto">
                             {list.map((track, i) => <PodCastComponent
                                     isActive={isActive}

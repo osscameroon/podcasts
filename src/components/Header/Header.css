@@ -4,11 +4,12 @@
 
 .header_logo {
     float: left;
+    margin-right: 150px;
 }
 
 .sort {
     font-size: 16px;
-    padding: 0;
+    padding-left: 50%;
     opacity: 1;
 }
 
@@ -33,6 +34,7 @@
 /* Search form CSS */
 
 /********* Beginning CSS ************/
+
 input[type="search"] {
     color: #E4E4E4;
     border: 1px solid transparent;
@@ -51,4 +53,5 @@ input[type="search"]:focus {
     border-color: #1183d6;
     outline: none;
 }
+
 /******** End CSS ********/
