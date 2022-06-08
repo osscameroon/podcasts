@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/podcasts/static/css/main.2dadbe1d.css",
+    "main.js": "/podcasts/static/js/main.7d2d3ab6.js",
+    "static/js/787.7bcfc3de.chunk.js": "/podcasts/static/js/787.7bcfc3de.chunk.js",
+    "static/media/GoogleSans-Medium-v1.27.ttf": "/podcasts/static/media/GoogleSans-Medium-v1.27.81067d78370e5509b889.ttf",
+    "static/media/GoogleSans-Regular-v1.27.ttf": "/podcasts/static/media/GoogleSans-Regular-v1.27.19c78e33fc3a7243f219.ttf",
+    "static/media/GoogleSans-Bold-v1.27.ttf": "/podcasts/static/media/GoogleSans-Bold-v1.27.18cab8ca4b802f600b69.ttf",
+    "static/media/human_with_phone.png": "/podcasts/static/media/human_with_phone.f072a3d53f588667f581.png",
+    "static/media/earphone.png": "/podcasts/static/media/earphone.1dacf5b925d3f4d037f5.png",
+    "static/media/podcast_logo.png": "/podcasts/static/media/podcast_logo.87a5f3f25445292d72f9.png",
+    "index.html": "/podcasts/index.html",
+    "main.2dadbe1d.css.map": "/podcasts/static/css/main.2dadbe1d.css.map",
+    "main.7d2d3ab6.js.map": "/podcasts/static/js/main.7d2d3ab6.js.map",
+    "787.7bcfc3de.chunk.js.map": "/podcasts/static/js/787.7bcfc3de.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2dadbe1d.css",
+    "static/js/main.7d2d3ab6.js"
+  ]
+}
